@@ -63,14 +63,14 @@ do
 done
 if [ -t 0 ]; then stty sane; fi
 
-echo "\n\nDo you want to finalize the packages? (N/y)"
+echo -e '\n\nDo you want to finalize the packages? (N/y)'
 read myinput
 if [ "$myinput" == "y" ]
 then
 	for swpkg in ${Destination}*.plist
 	do
 	#    plutil -convert xml1 $swpkg
-	    mypackage=`echo  $(basename $swpkg) | perl -pe 's/\.plist//g'`
+	    mypackage=`echo  $(basename $swpkg) | perl -pe 's/\.plist$//'`
 	   
 		i=0
 		while [ 1 ]; do
@@ -92,7 +92,7 @@ then
 		done
 	done
 
-	echo "\nThe packages will be converted into dmg-Files. This could take a while."
+	echo -e '\nThe packages will be converted into dmg files. This could take a while.' 
 	for swpkg in ${Destination}*.pkg
 	do
 		finaldmg=`echo ${swpkg} | perl -pe 's/\.pkg$//'`
