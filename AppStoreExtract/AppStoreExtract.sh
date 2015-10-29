@@ -36,7 +36,7 @@
 ###
 # Definition of the local temporary AppStore folder
 ###
-AppStoreRoot="/private/var/folders/rj/dk_2b7m97yq4f3n91fp7jdlm0000gn/C/com.apple.appstore"
+AppStoreRoot="$(getconf DARWIN_USER_CACHE_DIR)/com.apple.appstore"
 
 ###
 # Definition of the local output folder where the extracted packages are stored on your machine
