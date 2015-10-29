@@ -7,22 +7,20 @@
 # Based on an idea from Rich Trouton for downloading from the AppStore:
 # http://derflounder.wordpress.com/2013/10/19/downloading-microsofts-remote-desktop-installer-package-from-the-app-store/
 ###
-# Edited and extended for internal use at ETH Zurich by Katiuscia Zehnder (scripting) 
-# and Max Schlapfer (idea and testing)
-# 
-# Tested under 10.9.5, 10.10.5, 10.11.0
+# Edited and extended for internal use at ETH Zurich
+# by Katiuscia Zehnder, Jan Hacker and Max Schlapfer
 ###
 
 
 ###
 # Short documentation
 # - This script needs the temporary download folder from the AppStore App, this is individual by host
-# - Activate the AppStore debug mode
-#   - Quit the AppStore.app if it is running
-#   - open the terminal and enter "defaults write com.apple.appstore ShowDebugMenu -bool true"
-#   - Start AppStore.app and open the Menu "Debug -> Show Download Folder..."
-#     - enter this folder below as the AppStoreRoot
-# - mkdir /Users/Shared/AppStore_Packages and use it a the Packages output folder
+#   and is extracted by "getconf DARWIN_USER_CACHE_DIR"
+#   If you want to access the debug mode of the AppStore:
+#	- Quit the AppStore.app if it is running
+#   	- open the terminal and enter "defaults write com.apple.appstore ShowDebugMenu -bool true"
+#   	- Start AppStore.app and browse the menu Debug
+# - The folder /Users/Shared/AppStore_Packages is generated and used as the packages output folder
 # - open Terminal and start this script (if needed make it executable first), keep the window open.
 # - Back in the AppStore.app login in to your account and navigate to your purchases
 #   - Click "Install" for all desired packages
