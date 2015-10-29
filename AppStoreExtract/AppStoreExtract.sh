@@ -97,7 +97,7 @@ then
 	echo "\nThe packages will be converted into dmg-Files. This could take a while."
 	for swpkg in ${Destination}*.pkg
 	do
-		finaldmg=`echo ${swpkg} | perl -pe 's/\.pkg//g'`
+		finaldmg=`echo ${swpkg} | perl -pe 's/\.pkg$//'`
 		echo "\ncreating ${finaldmg}.dmg"
 		hdiutil create -srcfolder "${swpkg}" -format UDRO "${finaldmg}"
 		rm "${swpkg}"
