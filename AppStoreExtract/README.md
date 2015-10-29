@@ -28,3 +28,7 @@ This script needs the temporary download folder from the AppStore App, this is i
 - go back to the terminal and continue the script by pressing any key to stop processing downloads
 
 - answer the following question with yes (y) to finalize and clean up the downloaded packages
+
+
+## known problems
+If the App ist to small (didn't find an exact size) the extraction might fail sometime, probably when the installation is finished to fast.
