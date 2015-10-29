@@ -9,7 +9,7 @@ http://derflounder.wordpress.com/2013/10/19/downloading-microsofts-remote-deskto
 ### How to use
 This script needs the temporary download folder from the AppStore App, this is individual by host and is extracted from within the script using "getconf DARWIN_USER_CACHE_DIR".
 
-If you want to activate the AppStore debug mode (not need for using this script) and check the folder by hand:
+If you want to activate the AppStore debug mode (not needed for using this script) and check the folder by hand:
   - Quit the AppStore.app if it is running
   - open the terminal and enter
     `defaults write com.apple.appstore ShowDebugMenu -bool true`
