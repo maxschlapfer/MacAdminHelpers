@@ -1,9 +1,4 @@
 #!/bin/bash
-# Revision, author and date of last commit:#
-# $Rev: 1105 $
-# $Author: cfo4ea $
-# $Date: 2014-11-20 17:39:19 +0100 (Thu, 20 Nov 2014) $
-# $URL: https://svn.id.ethz.ch/id-cd-mac/private/packaging/02_documentation/05_tools/AppStoreExtractor/AppStoreExtract.sh $
 ###
 # Script to extract Installer packages from the Apple AppStore for OS X 
 #
@@ -14,9 +9,8 @@
 ###
 # Edited and extended for internal use at ETH Zurich by Katiuscia Zehnder (scripting) 
 # and Max Schlapfer (idea and testing)
-# December 2013: initial release
-# January 2014: minor changes
-# Tested under 10.9.4 without any changes
+# 
+# Tested under 10.9.5, 10.10.5, 10.11.0
 ###
 
 
@@ -47,6 +41,8 @@ AppStoreRoot="/private/var/folders/rj/dk_2b7m97yq4f3n91fp7jdlm0000gn/C/com.apple
 ###
 # Definition of the local output folder where the extracted packages are stored on your machine
 ###
+mkdir -p /Users/Shared/AppStore_Packages
+
 Destination="/Users/Shared/AppStore_Packages/"
 
 
