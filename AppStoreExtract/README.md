@@ -7,14 +7,13 @@ Based on an idea from Tim Sutton and Rich Trouton for downloading from the AppSt
 http://derflounder.wordpress.com/2013/10/19/downloading-microsofts-remote-desktop-installer-package-from-the-app-store/
 
 ### How to use
-This script needs the temporary download folder from the AppStore App, this is individual by host
+This script needs the temporary download folder from the AppStore App, this is individual by host and is extracted from within the script using "getconf DARWIN_USER_CACHE_DIR".
 
-- Activate the AppStore debug mode
+If you want to activate the AppStore debug mode (not need for using this script) and check the folder by hand:
   - Quit the AppStore.app if it is running
   - open the terminal and enter
-  	`defaults write com.apple.appstore ShowDebugMenu -bool true`
-  - Start AppStore.app and open the Menu "Debug -> Show Download Folder..."
-    - enter this folder path the AppStoreRoot in the script
+    `defaults write com.apple.appstore ShowDebugMenu -bool true`
+  - Start AppStore.app and browse the Menu "Debug"
 
 - The script generates and uses the directory "/Users/Shared/AppStore_Packages" as a destination, if you want to change this, just edit the script
 
