@@ -36,7 +36,7 @@
 ###
 # Definition of the local temporary AppStore folder
 ###
-AppStoreRoot="/private/var/folders/rj/dk_2b7m97yq4f3n91fp7jdlm0000gn/C/com.apple.appstore"
+AppStoreRoot="$(getconf DARWIN_USER_CACHE_DIR)/com.apple.appstore"
 
 ###
 # Definition of the local output folder where the extracted packages are stored on your machine
@@ -97,7 +97,7 @@ then
 	echo "\nThe packages will be converted into dmg-Files. This could take a while."
 	for swpkg in ${Destination}*.pkg
 	do
-		finaldmg=`echo ${swpkg} | perl -pe 's/\.pkg//g'`
+		finaldmg=`echo ${swpkg} | perl -pe 's/\.pkg$//'`
 		echo "\ncreating ${finaldmg}.dmg"
 		hdiutil create -srcfolder "${swpkg}" -format UDRO "${finaldmg}"
 		rm "${swpkg}"
