@@ -7,7 +7,6 @@ Based on an idea from Tim Sutton and Rich Trouton for downloading from the AppSt
 http://derflounder.wordpress.com/2013/10/19/downloading-microsofts-remote-desktop-installer-package-from-the-app-store/
 
 ### How to use
-Short documentation
 This script needs the temporary download folder from the AppStore App, this is individual by host
 
 - Activate the AppStore debug mode
