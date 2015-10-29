@@ -6,7 +6,7 @@ This script was tested under OS X Mavericks 10.9.5, Yosemite 10.10.5 ans OS X El
 Based on an idea from Tim Sutton and Rich Trouton for downloading from the AppStore:
 http://derflounder.wordpress.com/2013/10/19/downloading-microsofts-remote-desktop-installer-package-from-the-app-store/
 
-# How to use
+### How to use
 Short documentation
 This script needs the temporary download folder from the AppStore App, this is individual by host
 
@@ -30,5 +30,5 @@ This script needs the temporary download folder from the AppStore App, this is i
 - answer the following question with yes (y) to finalize and clean up the downloaded packages
 
 
-## known problems
+### Known Problems
 If the App ist to small (didn't find an exact size) the extraction might fail sometime, probably when the installation is finished to fast.
