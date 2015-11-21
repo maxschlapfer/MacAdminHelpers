@@ -6,6 +6,10 @@ This script was tested under OS X Mavericks 10.9.5, Yosemite 10.10.5 ans OS X El
 Based on an idea from Tim Sutton and Rich Trouton for downloading from the AppStore:
 http://derflounder.wordpress.com/2013/10/19/downloading-microsofts-remote-desktop-installer-package-from-the-app-store/
 
+Rich although published a detailed tutorial on how to use the script:
+https://derflounder.wordpress.com/2015/11/19/downloading-installer-packages-from-the-mac-app-store-with-appstoreextract/
+
+
 ### How to use
 This script needs the temporary download folder from the AppStore App, this is individual by host and is extracted from within the script using "getconf DARWIN_USER_CACHE_DIR".
 
