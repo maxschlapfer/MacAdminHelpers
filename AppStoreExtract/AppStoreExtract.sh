@@ -22,6 +22,7 @@
 #   	- Start AppStore.app and browse the menu Debug
 # - The folder /Users/Shared/AppStore_Packages is generated and used as the packages output folder
 # - open Terminal and start this script (if needed make it executable first), keep the window open.
+#   if the output wil be used with munikimport add the option "-m" to make the naming munki-friendly
 # - Back in the AppStore.app login in to your account and navigate to your purchases
 #   - Click "Install" for all desired packages
 #   - wait till every download/installation has finished
@@ -43,6 +44,11 @@ mkdir -p /Users/Shared/AppStore_Packages
 
 Destination="/Users/Shared/AppStore_Packages/"
 
+# Let users switch to munki naming convention by using -m as first argument to this script
+separator="_"
+if [ "$1" = "-m" ]; then
+ separator="-"
+fi
 
 
 # Make sure we can find PlistBuddy
@@ -84,8 +90,8 @@ then
 		    	version=$($PBUDDY -c "Print :representations:${i}:bundle-version" "$swpkg" 2>/dev/null)
 		    	appname=$($PBUDDY -c "Print :representations:${i}:title" "$swpkg" 2>/dev/null)
 		    	appname=`echo $appname | perl -pe 's/\ //g'`
-				echo "Softwarepackage will be renamed from ${Destination}${mypackage} to ${Destination}${appname}_${version}.pkg"
-				mv "${Destination}${mypackage}" "${Destination}${appname}_${version}.pkg" 2>/dev/null
+				echo "Softwarepackage will be renamed from ${Destination}${mypackage} to ${Destination}${appname}${separator}${version}.pkg"
+				mv "${Destination}${mypackage}" "${Destination}${appname}${separator}${version}.pkg" 2>/dev/null
 				rm "${Destination}${mypackage}.plist"
 	        fi
 	        i=$(($i+1))
