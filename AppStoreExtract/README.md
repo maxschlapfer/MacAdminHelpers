@@ -22,6 +22,7 @@ If you want to activate the AppStore debug mode (not needed for using this scrip
 - The script generates and uses the directory "/Users/Shared/AppStore_Packages" as a destination, if you want to change this, just edit the script
 
 - open terminal and start this script (make it executable first), keep the window open.
+  To make more munikimporter friendly output (using a "-" instead of "_" use the "-m" option to start the script:
 
 - Back in the AppStore.app login in to your account and navigate to your purchases (or buy a new App)
   - Click "Install" for all desired packages
