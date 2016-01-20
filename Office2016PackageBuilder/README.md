@@ -22,7 +22,7 @@ This script was tested under OS X El Capitan 10.11.2.
   - http://macops.ca/disabling-first-run-dialogs-in-office-2016-for-mac/
 
 - Clayton Burlison
-  - https://clburlison.com/demystify-office2016/#dialog-prompts---ie-whats-new
+  - https://clburlison.com/demystify-office2016/
 
  
 ###How to use the script?
