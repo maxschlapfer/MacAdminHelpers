@@ -11,12 +11,12 @@ This script was tested under OS X El Capitan 10.11.2.
 
 ###Based in ideas and scripts from:
 - Rich Trouton:
-https://derflounder.wordpress.com/2015/08/05/creating-an-office-2016-15-12-3-installer/
-https://derflounder.wordpress.com/2016/01/14/creating-an-office-2016-15-18-0-installer/
-https://derflounder.wordpress.com/2016/01/17/suppressing-office-2016s-first-run-dialog-windows/
+  - https://derflounder.wordpress.com/2015/08/05/creating-an-office-2016-15-12-3-installer/
+  - https://derflounder.wordpress.com/2016/01/14/creating-an-office-2016-15-18-0-installer/
+  - https://derflounder.wordpress.com/2016/01/17/suppressing-office-2016s-first-run-dialog-windows/
 
 - Tim Sutton
-http://macops.ca/disabling-first-run-dialogs-in-office-2016-for-mac/
+  - http://macops.ca/disabling-first-run-dialogs-in-office-2016-for-mac/
 
  
 ###How to use the script?
@@ -45,19 +45,24 @@ http://macops.ca/disabling-first-run-dialogs-in-office-2016-for-mac/
 The following parameters are used and might be changed to fit your needs. The default value is defined below:
 
 1.	`PRODUCT="Microsoft_Office_2016"`
+
 	This is the product name, on which the final output name is based.
 
 2.	`PKG_LANGUAGE="ML"`
+	
 	As Office 2016 is multi-language this tag is pre-set to ML.
 
 3.	`MAINURL="http://macadmins.software/versions.xml"`
+	
 	This site is officially maintained by Microsoft.
 	You should not change this value.
 
 4.	`FULL_VERSION`
+	
 	The most recent version is extracted from the MAINURL and is automatically set.
 
 5.	`FULL_INSTALLER="http://go.microsoft.com/fwlink/?linkid=532572"`
+	
 	This URL depends on what you need or where you are based in the world. Default link is the Full Installer from the European server from Microsoft, change it according to your needs:
 
 		AMERICAS:	http://go.microsoft.com/fwlink/?linkid=525133
@@ -67,22 +72,28 @@ The following parameters are used and might be changed to fit your needs. The de
 	More URLs (single Packages, Update Information) are available from http://macadmins.software.
 	
 6.	`OUTNAME="${PRODUCT}_${FULL_VERSION}_${PKG_LANGUAGE}"`
+	
 	The outname defines our naming convention for the resulting package, feel free to edit.
 
 7.	`PKG_ID="com.company.myname.pkg.${PRODUCT}.${PKG_LANGUAGE}"`
+	
 	The package ID, adapt to reflect your company infos.
 
 
 The scripts generates a postinstall script to apply all the desired settings. To change the defaults you need to edit the following variables within the postinstall part:
 
 8.	`submit_diagnostic_data_to_microsoft=false`
+	
 	This defines if you send telemetry data to Microsoft. It is unclear what kind of data is collected (by Office 2016 for Mac) and send. Default of this script is to turn it off.
 	
 9.	`turn_off_first_run_setup=true`
+	
 	This settings defines if you want to show the first run and "What's new" dialogs for each application. The default is to turn this off in a managed environment.
 
 10.	`Office2016Apps=(Excel OneNote Outlook PowerPoint Word)`
+	
 	This is the list of Apps inside the Office package, change this list if Microsoft adds some new apps in the future.
 
 11.	`LOGFILE="/var/log/MyLogs/MS_Office_2016.log"`
+	
 	Defines the Logfile and path were the postinstall output writes the script output.
