@@ -1,3 +1,6 @@
+**This script is still under development, please test before using it in your environment.**
+
+
 # Package Build script for Microsoft Office 2016
 
 **Important:** You need a Volume License from Microsoft to use this script.
