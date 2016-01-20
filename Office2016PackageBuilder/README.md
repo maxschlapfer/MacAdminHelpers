@@ -24,7 +24,8 @@ This script was tested under OS X El Capitan 10.11.2.
 1.	Save the MS_Office_2016_Builder-Script in a folder on your local machine.
 
 2.	Generate a folder called "volume_license" in the same directory as this script and put the Microsoft_Office_2016_VL_Serializer.pkg in this folder. You can get this PKG directly from Microsoft: https://www.microsoft.com/Licensing/servicecenter/default.aspx
-	Attention: You need a login and a valid Volume Licensing contract with Microsoft to access this package. 
+	
+	**Attention: You need a login and a valid Volume Licensing contract with Microsoft to access this package.** 
 
 3.	make the script executable:
 	chmod 755 MS_Office_2016_Builder.sh
