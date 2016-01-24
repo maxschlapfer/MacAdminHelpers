@@ -107,4 +107,4 @@ The scripts generates a postinstall script to apply all the desired settings. To
 
 
 ### Known Issues
-- Under some circumstances the "What's new dialog within OneNote still shows up. Haven't found out where the problem is.
+- Under some circumstances the "What's new" dialog within OneNote still shows up. Haven't found out where the problem is.
