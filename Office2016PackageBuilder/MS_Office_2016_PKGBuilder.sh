@@ -11,16 +11,27 @@
 #
 # Tim Sutton
 # http://macops.ca/disabling-first-run-dialogs-in-office-2016-for-mac/
+#
+# Clayton Burlison
+# https://clburlison.com/demystify-office2016/
+#
+# Eric Holtam
+# https://osxbytes.wordpress.com/2015/09/17/not-much-whats-new-with-you/
+# 
+# The Slack Microsoft Office channel and all the people there: 
+# A big thank you goes to this community!
 # 
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
 # Adapted for use at ETH Zurich by Max Schlapfer
-# Edited for newest release: 2016-01-18
+# Edited for newest release: 2016-01-18 (15.18)
+# Edited to configure AutoUpdate: 2016-01-24
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
 
 
-# # # # # # # # # # # # # # # # # #
-# Definition of needed variables  #
-# # # # # # # # # # # # # # # # # #
+# # # # # # # # # # # # # # # # # # # # # # # # #
+# Definition of needed variables                #
+# See the README.md for a detailed explanation  #
+# # # # # # # # # # # # # # # # # # # # # # # # #
 
 # Product name and Language
 PRODUCT="Microsoft_Office_2016"
@@ -39,7 +50,6 @@ FULL_VERSION=$(curl -s $MAINURL | xmllint --xpath '//latest/o365/text()' -)
 # Default setting is the European distribution server from Microsoft
 FULL_INSTALLER="http://go.microsoft.com/fwlink/?linkid=532572"
 
-
 # Define output name based on naming convention
 OUTNAME="${PRODUCT}_${FULL_VERSION}_${PKG_LANGUAGE}"
 PKG_ID="ch.ethz.mac.pkg.${PRODUCT}.${PKG_LANGUAGE}"
@@ -50,7 +60,7 @@ PKG_ID="ch.ethz.mac.pkg.${PRODUCT}.${PKG_LANGUAGE}"
 # your Microsoft_Office_2016_VL_Serializer.pkg
 # You can get this PKG from Microsoft:
 # https://www.microsoft.com/Licensing/servicecenter/default.aspx
-# Attention: You need a login and a valid contract with Microsoft
+# Attention: You need a login and a valid contract with Microsoft!
 
 LICENSE_DIR="volume_license"
 								
