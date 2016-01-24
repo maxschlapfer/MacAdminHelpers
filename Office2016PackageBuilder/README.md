@@ -7,9 +7,9 @@
 
 This scripts downloads the Full Installer for Microsoft Office, adds the Volume License Installer and some configurations and generates a package without changing the original package from Microsoft. After that it puts the PKG in a diskimage and cleans the temp. directory.
 
-When deploying with the final package, sending Telemetry Data to Microsoft is disabled, the "First Run" and "What's New" dialogs are turned off and the AutoUpdater will be set to manually check for updates.
+When deploying with the final package, sending Telemetry Data to Microsoft is disabled, the "First Run" and "What's New" dialogs are turned off and the AutoUpdater will be set to manually check for updates and the insider program feature is disabled.
 
-This script was tested under OS X El Capitan 10.11.2.
+This script was tested under OS X El Capitan 10.11.3.
 
 
 ###Based in ideas and scripts from:
@@ -104,3 +104,7 @@ The scripts generates a postinstall script to apply all the desired settings. To
 11.	`LOGFILE="/var/log/MyLogs/MS_Office_2016.log"`
 	
 	Defines the Logfile and path were the postinstall output writes the script output.
+
+
+### Known Issues
+- Under some circumstances the "What's new dialog within OneNote still shows up. Haven't found out where the problem is.
