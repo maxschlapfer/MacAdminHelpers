@@ -12,7 +12,7 @@ When deploying with the final package, sending Telemetry Data to Microsoft is di
 This script was tested under OS X El Capitan 10.11.3.
 
 
-###Based in ideas and scripts from:
+###Based on ideas and scripts from:
 - Rich Trouton:
   - https://derflounder.wordpress.com/2015/08/05/creating-an-office-2016-15-12-3-installer/
   - https://derflounder.wordpress.com/2016/01/14/creating-an-office-2016-15-18-0-installer/
