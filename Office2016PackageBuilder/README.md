@@ -24,6 +24,7 @@ This script was tested under OS X El Capitan 10.11.3.
 - Clayton Burlison
   - https://clburlison.com/demystify-office2016/
 
+- The Slack Microsoft Office channel and all the people there: A big thank you goes to this community!
  
 ###How to use the script?
 
