@@ -154,9 +154,19 @@ fi
 # Install the Microsoft Office 2016 Volume License file from
 /usr/sbin/installer -dumplog -verbose -pkg "$WORKING_DIR/Microsoft_Office_2016_VL_Serializer.pkg" -target "$3"   2>&1 | tee -a $LOGFILE
 
-# Configure AutoUpdate behaviour (set to manual check)
+# Configure AutoUpdate behaviour (set to manual check and hide insider program)
 /usr/bin/defaults write /Library/Preferences/com.microsoft.autoupdate2 HowToCheck -string 'Manual'
 /usr/bin/defaults write /Library/Preferences/com.microsoft.autoupdate2 LastUpdate -date '2016-01-13T15:00:00Z'
+/usr/bin/defaults write /Library/Preferences/com.microsoft.autoupdate2 DisableInsiderCheckbox -bool TRUE
+
+# Configure the default save location for Office for all existing users
+# Set the Internal Field Separator for the Input to \n otherwise dscl-output is not correctly parsed.
+IFS=$'\n'
+for i in $(dscl . -list /Users PrimaryGroupID | grep ' 20$'| cut -d' ' -f1)
+do
+   sudo -- su - $i -c 'defaults write ~/Library/Group\ Containers/UBF8T346G9.Office/com.microsoft.officeprefs DefaultsToLocalOpenSave -bool TRUE'
+done
+unset IFS
 
 
 # Configure Office First Run behaviour now
