@@ -1,7 +1,10 @@
 # AppStore Extractor Script
 Script to extract Installer packages from the Apple AppStore for OS X 
 
-This script was tested under OS X Mavericks 10.9.5, Yosemite 10.10.5 ans OS X El Capitan 10.11.0
+### IMPORTANT
+Before you start using this script, please make sure to have the needed licenses covered (for example by site license, VPP or single licenses).
+
+This script was tested under OS X Mavericks 10.9.5, Yosemite 10.10.5 and OS X El Capitan 10.11.0
 
 Based on an idea from Tim Sutton and Rich Trouton for downloading from the AppStore:
 http://derflounder.wordpress.com/2013/10/19/downloading-microsofts-remote-desktop-installer-package-from-the-app-store/
