@@ -44,8 +44,16 @@ This script was tested under OS X El Capitan 10.11.3.
 
 5.	Make sure you have a working internet connection, as the script will download the full office installer from the Microsoft server (for version 15.18 the size is about 1.4 GB).
 
-6.	Run the MS_Office_2016_Builder script.
+6.	Run the MS_Office_2016_PKGBuilder script.
 	The process will take a few minutes to complete with a fast internet connection
+
+	If you want to exclude some packages you can do with the argument `--exclude` plus a list of Apps or Office parts to exclude (this will generate an InstallerChoices.xml that is used during the Office installation):
+	
+	The following Installer Choices are available (with version 15.18):
+	`word``excel` `powerpoint` `onenote.mac` `outlook` `autoupdate` and `office.fonts`
+
+
+	`MS_Office_2016_PKGBuilder.sh --exclude (word excel powerpoint onenote.mac outlook autoupdate office.fonts)`
 	
 7.	When the script has finished, you will find the final DMG containing the package inside the results folder.
 
