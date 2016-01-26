@@ -47,13 +47,13 @@ This script was tested under OS X El Capitan 10.11.3.
 6.	Run the MS_Office_2016_PKGBuilder script.
 	The process will take a few minutes to complete with a fast internet connection
 
-	If you want to exclude some packages you can do with the argument `--exclude` plus a list of Apps or Office parts to exclude (this will generate an InstallerChoices.xml that is used during the Office installation):
+	If you want to exclude some packages you can do with the argument `--exclude` plus a quoted list of Apps or Office parts to exclude (this will generate an InstallerChoices.xml that is used during the Office installation):
 	
 	The following Installer Choices are available (with version 15.18):
 	`word` `excel` `powerpoint` `onenote.mac` `outlook` `autoupdate` and `office.fonts`
 
 
-	for example `./MS_Office_2016_PKGBuilder.sh --exclude (onenote.mac autoupdate)` to exclude OneNote and the AutoUpdater app or run `./MS_Office_2016_PKGBuilder.sh`without any arguments to install everything.
+	for example `./MS_Office_2016_PKGBuilder.sh --exclude "onenote.mac autoupdate"` to exclude OneNote and the AutoUpdater app or run `./MS_Office_2016_PKGBuilder.sh`without any arguments to install everything.
 	
 7.	When the script has finished, you will find the final DMG containing the package inside the results folder.
 
