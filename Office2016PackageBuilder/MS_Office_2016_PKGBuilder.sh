@@ -43,6 +43,14 @@ MAINURL="http://macadmins.software/versions.xml"
 # Get latest version number
 FULL_VERSION=$(curl -s $MAINURL | xmllint --xpath '//latest/o365/text()' -)
 
+# Excluding packages from installing, all listed Apps are excluded from the installation
+# this is done with an InstallerChoices.xml that is generated based on the arguments.
+if [ "$1" = "--exclude" ]; then
+	DisabledPackages=($2)
+else
+	DisabledPackages=()
+fi
+
 # Use the URL from macadmins.software from the nearest site to your location
 # 	AMERICAS:	http://go.microsoft.com/fwlink/?linkid=525133
 # 	EUROPE:		http://go.microsoft.com/fwlink/?linkid=532572
@@ -96,6 +104,25 @@ SCRIPT_DIR="${OUTNAME}/scripts"
 # Download all needed files and put them together
 # copy licensing package
 cp -rp ./${LICENSE_DIR}/Microsoft_Office_2016_VL_Serializer.pkg ${SCRIPT_DIR}
+
+# Putting the InstallerChoices file into place when needed
+if [ ${#DisabledPackages[@]} -eq 0 ]; then
+	echo "No InstallerChoices needed continue."
+else
+	echo "Setup for InstallerChoices found, generating choices.xml now."
+	cat <<- 'EOF' > ${SCRIPT_DIR}/choices.xml
+	<?xml version="1.0" encoding="UTF-8"?>
+	<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+	<plist version="1.0">
+	<array>
+	EOF
+
+	for DisabledPKG in ${DisabledPackages[*]}
+	do
+		echo "<dict>\n<key>attributeSetting</key>\n<integer>0</integer>\n<key>choiceAttribute</key>\n<string>selected</string>\n<key>choiceIdentifier</key>\n<string>com.microsoft.${DisabledPKG}</string>\n</dict>" >> ${SCRIPT_DIR}/choices.xml
+	done
+	echo "</array>\n</plist>" >> ${SCRIPT_DIR}/choices.xml
+fi
 
 # get most recent full installer
 (cd ${SCRIPT_DIR}; curl -LsOJ $FULL_INSTALLER)
