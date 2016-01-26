@@ -186,7 +186,7 @@ else
 fi
 
 # Install Microsoft Office 2016
-/usr/sbin/installer -dumplog -verbose -pkg "$WORKING_DIR/Microsoft_Office_2016_Installer.pkg" -target "$3"   2>&1 | tee -a $LOGFILE
+/usr/sbin/installer -dumplog -verbose -pkg "$WORKING_DIR/Microsoft_Office_2016_Installer.pkg" -applyChoiceChangesXML "$WORKING_DIR/choices.xml" -target "$3"   2>&1 | tee -a $LOGFILE
 
 # Install the Microsoft Office 2016 Volume License file from
 /usr/sbin/installer -dumplog -verbose -pkg "$WORKING_DIR/Microsoft_Office_2016_VL_Serializer.pkg" -target "$3"   2>&1 | tee -a $LOGFILE
