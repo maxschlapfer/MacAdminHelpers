@@ -1,4 +1,4 @@
-**This script is still under development, please test before using it in your production environment.**
+**Please test before using it in your production environment.**
 
 
 # Package Build script for Microsoft Office 2016
