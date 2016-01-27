@@ -5,4 +5,4 @@ Helpers for OS X packaging and MacAdmins
 A script to extract installer packages from the Apple AppStore for OS X.
 
 ###Office 2016 PackageBuilder Script
-A package build script to bake the colume license and various configurations into the package for deployment inside your organisation.
+A package build script to download the full installer from Microsoft and bake the volume license and various configurations into the package for deployment inside your organisation.
