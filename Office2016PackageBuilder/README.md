@@ -28,6 +28,9 @@ This script was tested under OS X El Capitan 10.11.3.
   - https://osxbytes.wordpress.com/2015/09/17/not-much-whats-new-with-you/
 
 - The Slack Microsoft Office channel and all the people there: A big thank you goes to this community!
+
+- Thanks to Jan for his scripting help!
+  - https://github.com/schnoddelbotz 
  
 ###How to use the script?
 
