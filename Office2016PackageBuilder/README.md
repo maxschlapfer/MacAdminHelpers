@@ -53,8 +53,9 @@ This script was tested under OS X El Capitan 10.11.3.
 	If you want to exclude some packages you can do with the argument `--exclude` plus a quoted list of Apps or Office parts to exclude (this will generate an InstallerChoices.xml that is used during the Office installation):
 	
 	The following Installer Choices are available (with version 15.18):
-	`word` `excel` `powerpoint` `onenote.mac` `outlook` `autoupdate` and `office.fonts`
+	`word` `excel` `powerpoint` `onenote.mac` `outlook` and `autoupdate`
 
+	**Important: Please do not deactivate the installation of the fonts, frameworks and proofing tools, as you might end up with unstable and unsupported setup.**
 
 	for example `./MS_Office_2016_PKGBuilder.sh --exclude "onenote.mac autoupdate"` to exclude OneNote and the AutoUpdater app or run `./MS_Office_2016_PKGBuilder.sh`without any arguments to install everything.
 	
