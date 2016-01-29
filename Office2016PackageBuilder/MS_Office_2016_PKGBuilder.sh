@@ -25,6 +25,7 @@
 # Adapted for use at ETH Zurich by Max Schlapfer
 # Edited for newest release: 2016-01-18 (15.18)
 # Edited to configure AutoUpdate: 2016-01-24
+# Edited to check the parameter inputs: 2016-01-29
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
 
 
@@ -50,6 +51,20 @@ if [ "$1" = "--exclude" ]; then
 else
 	DisabledPackages=()
 fi
+
+for DisabledPKG in ${DisabledPackages[*]}
+do
+	echo $DisabledPKG | egrep -v '(word|excel|powerpoint|onenote.mac|outlook|autoupdate)'
+	
+	if [ $? -eq 0 ]; then
+		echo "Sorry, bad arguments: You can only disable the installation of Word, Excel, PowerPoint, Outlook, OneNote or the AutoUpdater."
+		echo "The only valid options are: word excel powerpoint onenote.mac outlook and autoupdate, each separated by space."
+		echo "For Example to disable OneNote and the AutoUpdater."
+		echo "./MS_Office_2016_PKGBuilder.sh --exclude \"onenote.mac autoupdate\""
+		exit 1
+	fi
+done
+
 
 # Use the URL from macadmins.software from the nearest site to your location
 # 	AMERICAS:	http://go.microsoft.com/fwlink/?linkid=525133
