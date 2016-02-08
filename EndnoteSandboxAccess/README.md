@@ -13,7 +13,7 @@ This helper does grant access to the EndNote settings file on a per user base by
 
 
 ### How To use?
-Generate an App with Xcode and deploy to every machine that you want to deploy EndNote and Office 2016. Make a postinstall script that runs this App in the user context of every existing user on the machine, for example with this code snippet:
+Generate an App with Xcode (use the provided Xcode project) and deploy to every machine that you want to deploy EndNote and Office 2016. Make a postinstall script that runs this App in the user context of every existing user on the machine, for example with this code snippet:
 
 ```
 # Set the Internal Field Separator for the Input to \n otherwise dscl-output is not correctly parsed.
