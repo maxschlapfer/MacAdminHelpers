@@ -1,5 +1,7 @@
 ##THIS PROJECT IS A WORK IN PROGRESS AND NOT YET FULLY TESTED
 
+####This code is not yet useful, we found a problem with code exceptions when the binary is not codesigned, we have to investigate this further! Continue at your own risk.
+
 This Objective-C project will grant access to the EndNote settings file using the OS to generate a sandbox securebookmarks file for EndNote to work together with Word 2016.
 
 The program was developed by "Schnoddelbotz" (https://github.com/schnoddelbotz) based on input from
