@@ -1,14 +1,19 @@
-##THIS PROJECT IS A WORK IN PROGRESS AND NOT YET FULLY TESTED
-### We are still working out some details, please test before using!
+##EndNote Sandbox Access Helper App
 
-This Objective-C project will grant access to the EndNote settings file using the OS to generate a sandbox securebookmarks file for EndNote to work together with Word 2016.
+####Due to the possibility to access the right certificates to sign the App, we can not reach the final goal.
+
+This Objective-C project tried to grant access to the EndNote settings file using the OS to generate a sandbox securebookmarks file for EndNote to work together with Word 2016.
 
 The program was developed by "Schnoddelbotz" (https://github.com/schnoddelbotz) based on input from
 http://objcolumnist.com/2012/05/21/security-scoped-file-url-bookmarks
 
+But after intense testing we weren't able to reach our goal: We would probably need a valid certificate to sign our App either from Thomson Reuters or Microsoft to successfully write this file.
 
-### What does this program?
-This helper does grant access to the EndNote settings file on a per user base by touching the file `com.ThomsonResearchSoft.EndNote.plist` and then granting access to this file for Microsoft Word 2016 by generating a file containing the secure bookmark:
+More information from Apple about snadboxing apps ans especially about security-scoped bookmarks can be found in this video (starting at 21:30): https://developer.apple.com/videos/play/wwdc2012-700/
+
+
+### What was the goal of this program?
+This helper should grant access to the EndNote settings file on a per user base by touching the file `com.ThomsonResearchSoft.EndNote.plist` and then granting access to this file for Microsoft Word 2016 by generating a file containing the secure bookmark:
 
 ```
 /Users/USERNAME/Library/Containers/com.microsoft.Word/Data/Library/Preferences/com.ThomsonResearchSoft.EndNote.securebookmarks.plist
@@ -16,7 +21,7 @@ This helper does grant access to the EndNote settings file on a per user base by
 
 
 ### How To use?
-Generate an App with Xcode, you can use the Xcode-Project or do it on the command line with the main.m file:
+Generate the app with Xcode, you can use the Xcode-Project or do it on the command line with the main.m file:
 
 ```
  clang -framework Foundation -o EndnoteSandboxAccess main.m
@@ -34,3 +39,5 @@ do
 done
 unset IFS
 ```
+
+As stated above: This is not working as expected as the sandbox environment checks some signing to prevent other apps to sneek in and place some malicious code, which is actually good but a show stopper for our idea.
