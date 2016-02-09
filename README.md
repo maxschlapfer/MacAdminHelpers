@@ -5,7 +5,7 @@ Helpers for OS X packaging and MacAdmins
 A script to extract installer packages from the Apple AppStore for OS X.
 
 ###EndnoteSandboxAccess
-A little helper App to programmatically grant access to the EndNote settings file for Microsoft Word 2016.
+A little project to build a helper App to programmatically grant access to the EndNote settings file for Microsoft Word 2016. Unfortunately, this is not (yet?) usable without a proper certificate (probably from Thomson Reuters).
 
 ###Office 2016 PackageBuilder Script
 A package build script to download the full installer from Microsoft and bake the volume license and various configurations into the package for deployment inside your organisation.
