@@ -1,6 +1,5 @@
 ##THIS PROJECT IS A WORK IN PROGRESS AND NOT YET FULLY TESTED
-
-####This code is not yet useful, we found a problem with code exceptions when the binary is not codesigned, we have to investigate this further! Continue at your own risk.
+### We are still working out some details, please test before using!
 
 This Objective-C project will grant access to the EndNote settings file using the OS to generate a sandbox securebookmarks file for EndNote to work together with Word 2016.
 
@@ -15,7 +14,14 @@ This helper does grant access to the EndNote settings file on a per user base by
 
 
 ### How To use?
-Generate an App with Xcode (use the provided Xcode project) and deploy to every machine that you want to deploy EndNote and Office 2016. Make a postinstall script that runs this App in the user context of every existing user on the machine, for example with this code snippet:
+Generate an App with Xcode, you can use the Xcode-Project or do it on the command line with the main.m file:
+
+```
+ clang -framework Foundation -o EndnoteSandboxAccess main.m
+ codesign --sign - EndnoteSandboxAccess
+```
+
+Then deploy to every machine that you want to deploy EndNote and Office 2016. Make a postinstall script that runs this App in the user context of every existing user on the machine, for example with this code snippet:
 
 ```
 # Set the Internal Field Separator for the Input to \n otherwise dscl-output is not correctly parsed.
