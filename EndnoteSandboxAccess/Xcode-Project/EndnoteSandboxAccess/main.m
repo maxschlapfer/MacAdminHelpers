@@ -44,7 +44,9 @@ int main(int argc, const char * argv[]) {
         
         if (error==NULL) {
             
-            NSDictionary *bookmarkDict = @{ standardizedPath : bookmarkData };
+            NSDictionary *bookmarkDict = @{
+                                           @"securebookmarks": @{ standardizedPath : bookmarkData }
+                                           };
             
             [bookmarkDict writeToFile:fullOutFile atomically:YES];
             
