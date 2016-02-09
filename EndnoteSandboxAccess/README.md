@@ -10,7 +10,9 @@ http://objcolumnist.com/2012/05/21/security-scoped-file-url-bookmarks
 ### What does this program?
 This helper does grant access to the EndNote settings file on a per user base by touching the file `com.ThomsonResearchSoft.EndNote.plist` and then granting access to this file for Microsoft Word 2016 by generating a file containing the secure bookmark:
 
-`/Users/USERNAME/Library/Containers/com.microsoft.Word/Data/Library/Preferences/com.ThomsonResearchSoft.EndNote.securebookmarks.plist`
+```
+/Users/USERNAME/Library/Containers/com.microsoft.Word/Data/Library/Preferences/com.ThomsonResearchSoft.EndNote.securebookmarks.plist
+````
 
 
 ### How To use?
