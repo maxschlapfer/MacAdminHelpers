@@ -17,7 +17,7 @@ based on input from the following sources:
 - https://mike.kaply.com/2012/03/16/customizing-firefox-autoconfig-files/
 - http://mxr.mozilla.org/mozilla-central/source/extensions/pref/autoconfig/src/nsAutoConfig.cpp
 - http://web.mit.edu/~firefox/www/maintainers/autoconfig.html
-- https://addons.mozilla.org/en-US/firefox/addon/deutsch-de-language-pack/versions/?page=1#version-37.0
+- https://addons.mozilla.org/en-US/firefox/addon/deutsch-de-language-pack/versions/?page=1
 
  
 ###How to use the script?
