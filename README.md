@@ -4,6 +4,9 @@ Helpers for OS X packaging and MacAdmins
 ###AppStore Extractor Script
 A script to extract installer packages from the Apple AppStore for OS X.
 
+###Mozilla Firefox PackageBuilder Script
+A package build script to download the full installer from Mozilla and bake some AddOns and Language packs and various configurations into the package for deployment inside your organisation.
+
 ###Office 2016 PackageBuilder Script
 A package build script to download the full installer from Microsoft and bake the volume license and various configurations into the package for deployment inside your organisation.
 
