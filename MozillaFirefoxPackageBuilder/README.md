@@ -48,4 +48,4 @@ The base packages are the EN-US versions for the Rapid Release (RR) or the Exten
   German:	https://addons.mozilla.org/en-US/firefox/addon/deutsch-de-language-pack/ <br/>
   French:	https://addons.mozilla.org/en-US/firefox/addon/français-language-pack/ <br/>
   Italian:	https://addons.mozilla.org/en-US/firefox/addon/italiano-it-language-pack/ <br/>
-  Rumantsch:	https://addons.mozilla.org/en-US/firefox/addon/rumantsch-language-pack/
+  Rhaeto-Romanic:	https://addons.mozilla.org/en-US/firefox/addon/rumantsch-language-pack/
