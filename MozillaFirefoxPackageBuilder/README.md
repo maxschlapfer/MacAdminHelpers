@@ -1,4 +1,5 @@
-# Package Build script for Mozilla Firefox (RR and ESR)
+# Package Build script for
+Mozilla Firefox (RR and ESR)
 
 These scripts download the Mozilla Firefox installer for the Rapid Release (RR) or the Extended Support Release (ESR). They apply some Firefox configurations and include a Language switcher together with some language packs. After that the PKG is put in a diskimage and the temp. build directory is cleaned.
 
@@ -42,10 +43,15 @@ based on input from the following sources:
 As a sample the following AddOns are integrated into the package to make it multilingual:
 
 - Locale Switcher
+
   https://addons.mozilla.org/en-US/firefox/addon/locale-switcher/?src=ss
 
 - Language Packs
-  German:		https://addons.mozilla.org/en-US/firefox/addon/deutsch-de-language-pack/
-  French:		https://addons.mozilla.org/en-US/firefox/addon/français-language-pack/
-  Italian:		https://addons.mozilla.org/en-US/firefox/addon/italiano-it-language-pack/
+
+  German:	https://addons.mozilla.org/en-US/firefox/addon/deutsch-de-language-pack/
+
+  French:	https://addons.mozilla.org/en-US/firefox/addon/français-language-pack/
+
+  Italian:	https://addons.mozilla.org/en-US/firefox/addon/italiano-it-language-pack/
+
   Rumantsch:	https://addons.mozilla.org/en-US/firefox/addon/rumantsch-language-pack/
