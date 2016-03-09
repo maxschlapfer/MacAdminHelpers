@@ -36,3 +36,16 @@ based on input from the following sources:
 6.	When the script has finished, you will find the final DMG containing the package inside the results folder.
 
 7.	You can now use this package to distribute inside your organization.
+
+
+###Content Information
+As a sample the following AddOns are integrated into the package to make it multilingual:
+
+- Locale Switcher
+  https://addons.mozilla.org/en-US/firefox/addon/locale-switcher/?src=ss
+
+- Language Packs
+  German:		https://addons.mozilla.org/en-US/firefox/addon/deutsch-de-language-pack/
+  French:		https://addons.mozilla.org/en-US/firefox/addon/français-language-pack/
+  Italian:		https://addons.mozilla.org/en-US/firefox/addon/italiano-it-language-pack/
+  Rumantsch:	https://addons.mozilla.org/en-US/firefox/addon/rumantsch-language-pack/
