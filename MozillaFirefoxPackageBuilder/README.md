@@ -1,5 +1,5 @@
-# Package Build script for
-Mozilla Firefox (RR and ESR)
+# Package Build script for Mozilla Firefox
+##for Rapid Release (RR) and the Extended Support Release (ESR)
 
 These scripts download the Mozilla Firefox installer for the Rapid Release (RR) or the Extended Support Release (ESR). They apply some Firefox configurations and include a Language switcher together with some language packs. After that the PKG is put in a diskimage and the temp. build directory is cleaned.
 
@@ -40,7 +40,7 @@ based on input from the following sources:
 
 
 ###Content Information
-As a sample the following AddOns are integrated into the package to make it multilingual:
+The base packages are the EN-US versions for the Rapid Release (RR) or the Extended Support Release (ESR). The following AddOns are integrated into the package(s) to make Firefox multilingual:
 
 - Locale Switcher
 
