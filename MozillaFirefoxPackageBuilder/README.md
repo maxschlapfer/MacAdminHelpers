@@ -26,7 +26,7 @@ based on input from the following sources:
 
 2.	Adapte the `autoconfig-ethz.js` to include your cfg file.
 	
-3.	If needed change the script to add your own Mozilla Add Ons or language kits
+3.	If needed change the script to add your own Mozilla Add Ons or language kits and make them executable:
 	`chmod 755 FirefoxBuilder_ESR.sh` or `chmod 755 FirefoxBuilder_RR.sh`
 	
 4.	Make sure to have enough disk space, the scripts needs temporarily less than 0.5 GB during execution when building the installer package.
