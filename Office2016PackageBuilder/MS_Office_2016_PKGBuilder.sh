@@ -140,7 +140,7 @@ else
 fi
 
 # get most recent full installer
-(cd ${SCRIPT_DIR}; curl -LsOJ $FULL_INSTALLER)
+(cd ${SCRIPT_DIR}; curl -LsJ $FULL_INSTALLER -o Microsoft_Office_2016_Installer.pkg)
 
 # generate postinstall script
 cat <<- 'EOF' > ${SCRIPT_DIR}/postinstall
