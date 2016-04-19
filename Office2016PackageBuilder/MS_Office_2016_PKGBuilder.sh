@@ -111,6 +111,14 @@ SCRIPT_DIR="${OUTNAME}/scripts"
 	    mkdir -p "${SCRIPT_DIR}"
 	fi
 
+EMPTY_DIR="empty"
+	if [[ -e "${EMPTY_DIR}" ]]; then
+	    echo "Directory for empty PKG found."
+	else
+    	echo "Directory for empty PKG not found! Generating now."
+	    mkdir -p "empty"
+	fi
+
 
 # # # # # # # # # # # # # # # # # #
 # Building the package now        #
@@ -242,8 +250,8 @@ EOF
 chmod +x ${SCRIPT_DIR}/postinstall
 
 
-# build final installer PKG
-pkgbuild --identifier "$PKG_ID" --version "$FULL_VERSION" --nopayload "${OUTNAME}.pkg" --scripts ./${OUTNAME}/scripts
+# build final installer PKG with dummy payload
+pkgbuild --identifier "$PKG_ID" --version "$FULL_VERSION" --root empty --scripts ./${OUTNAME}/scripts "${OUTNAME}.pkg"
 
 # make DMG containing the configured Microsoft Office Full Installer package
 hdiutil create -volname ${OUTNAME} -srcfolder "${OUTNAME}.pkg" -format UDRO "result/${OUTNAME}.dmg"
