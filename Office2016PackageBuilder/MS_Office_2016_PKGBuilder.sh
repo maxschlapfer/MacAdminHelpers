@@ -21,12 +21,14 @@
 # The Slack Microsoft Office channel and all the people there: 
 # A big thank you goes to this community!
 # 
-# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
 # Adapted for use at ETH Zurich by Max Schlapfer
 # Edited for newest release: 2016-01-18 (15.18)
 # Edited to configure AutoUpdate: 2016-01-24
 # Edited to check the parameter inputs: 2016-01-29
-# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
+# Edited to reflect package name change of Microsoft original package: 2016-04-13
+# Added change from zone11 to make the package more Munik and Filewave friendly: 2016-04-19
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
 
 
 # # # # # # # # # # # # # # # # # # # # # # # # #
