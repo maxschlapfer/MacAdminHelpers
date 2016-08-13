@@ -28,6 +28,7 @@
 # Edited to check the parameter inputs: 2016-01-29
 # Edited to reflect package name change of Microsoft original package: 2016-04-13
 # Added change from zone11 to make the package more Munik and Filewave friendly: 2016-04-19
+# changed Serializer name to reflect new naming from Microsoft
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
 
 
@@ -82,14 +83,14 @@ PKG_ID="ch.ethz.mac.pkg.${PRODUCT}.${PKG_LANGUAGE}"
 # needed directories 
 # IMPORTANT:
 # The following directory has to exist and must contain
-# your Microsoft_Office_2016_VL_Serializer.pkg
+# your Microsoft_Office_2016_VL_Serializer_2.0.pkg
 # You can get this PKG from Microsoft:
 # https://www.microsoft.com/Licensing/servicecenter/default.aspx
 # Attention: You need a login and a valid contract with Microsoft!
 
 LICENSE_DIR="volume_license"
 								
-	if [[ -e "${LICENSE_DIR}/Microsoft_Office_2016_VL_Serializer.pkg" ]]; then
+	if [[ -e "${LICENSE_DIR}/Microsoft_Office_2016_VL_Serializer_2.0.pkg" ]]; then
 	    echo "Valid license PKG found."
 	else
     	echo "NO VALID LICENSING PKG FOUND! EXITING NOW"
@@ -128,7 +129,7 @@ EMPTY_DIR="empty"
 
 # Download all needed files and put them together
 # copy licensing package
-cp -rp ./${LICENSE_DIR}/Microsoft_Office_2016_VL_Serializer.pkg ${SCRIPT_DIR}
+cp -rp ./${LICENSE_DIR}/Microsoft_Office_2016_VL_Serializer_2.0.pkg ${SCRIPT_DIR}
 
 # Putting the InstallerChoices file into place when needed
 if [ ${#DisabledPackages[@]} -eq 0 ]; then
@@ -220,7 +221,7 @@ else
 fi
 
 # Install the Microsoft Office 2016 Volume License file from
-/usr/sbin/installer -dumplog -verbose -pkg "$WORKING_DIR/Microsoft_Office_2016_VL_Serializer.pkg" -target "$3"   2>&1 | tee -a $LOGFILE
+/usr/sbin/installer -dumplog -verbose -pkg "$WORKING_DIR/Microsoft_Office_2016_VL_Serializer_2.0.pkg" -target "$3"   2>&1 | tee -a $LOGFILE
 
 # Configure AutoUpdate behaviour (set to manual check and hide insider program)
 /usr/bin/defaults write /Library/Preferences/com.microsoft.autoupdate2 HowToCheck -string 'Manual'
