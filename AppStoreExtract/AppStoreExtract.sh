@@ -2,7 +2,8 @@
 ###
 # Script to extract Installer packages from the Apple AppStore for OS X 
 #
-# This script was tested under OS X Mountain Lion v10.8.5 and OS X Mavericks 10.9.x
+# This script was tested under
+# OS X Mountain Lion v10.8.5, OS X Mavericks 10.9.x, OS X El Capitan 10.11.x and macOS Sierra 10.12.0
 #
 # Based on an idea from Rich Trouton for downloading from the AppStore:
 # http://derflounder.wordpress.com/2013/10/19/downloading-microsofts-remote-desktop-installer-package-from-the-app-store/
@@ -16,7 +17,7 @@
 # Short documentation
 # - This script needs the temporary download folder from the AppStore App, this is individual by host
 #   and is extracted by "getconf DARWIN_USER_CACHE_DIR"
-#   If you want to access the debug mode of the AppStore:
+#   If you want to access the debug mode of the AppStore (This is no longer working with 10.12 and higher):
 #	- Quit the AppStore.app if it is running
 #   	- open the terminal and enter "defaults write com.apple.appstore ShowDebugMenu -bool true"
 #   	- Start AppStore.app and browse the menu Debug
