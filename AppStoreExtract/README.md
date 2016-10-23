@@ -17,11 +17,14 @@ https://derflounder.wordpress.com/2015/11/19/downloading-installer-packages-from
 This script needs the temporary download folder from the AppStore App, this is individual by host and is extracted from within the script using "getconf DARWIN_USER_CACHE_DIR".
 
 If you want to activate the AppStore debug mode (not needed for using this script) and check the folder by hand:
-__ATTENTION: This is no longr working with macOS Sierra 10.2 and higher, but is not needed for the script to work.__
+__ATTENTION: This is no longer working with macOS Sierra 10.2 and higher, but is not needed for the script to work.__
   - Quit the AppStore.app if it is running
   - open the terminal and enter
     `defaults write com.apple.appstore ShowDebugMenu -bool true`
   - Start AppStore.app and browse the Menu "Debug"
+
+If you want to check what folder is used by the AppStore.app, enter this command into your terminal:
+`getconf DARWIN_USER_CACHE_DIR`
 
 - The script generates and uses the directory "/Users/Shared/AppStore_Packages" as a destination, if you want to change this, just edit the script
 
