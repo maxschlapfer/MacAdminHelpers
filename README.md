@@ -1,8 +1,8 @@
 # MacAdminHelpers
-Helpers for OS X packaging and MacAdmins
+Helpers for macOS packaging and MacAdmins
 
 ###AppStore Extractor Script
-A script to extract installer packages from the Apple AppStore for OS X.
+A script to extract installer packages from the Apple AppStore for macOS.
 
 ###Mozilla Firefox PackageBuilder Script
 A package build script to download the full installer from Mozilla and bake some AddOns and Language packs and various configurations into the package for deployment inside your organisation.
