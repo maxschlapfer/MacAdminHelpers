@@ -28,7 +28,7 @@ If you want to check what folder is used by the AppStore.app, enter this command
 
 - The script generates and uses the directory "/Users/Shared/AppStore_Packages" as a destination, if you want to change this, just edit the script
 
-- Open terminal and start this script (make it executable first), keep the window open. To make the package naming more munki friendly (using a "-" instead of "_") use the "-m" option to start the script: `AppStoreExctract.sh -m`
+- Open terminal and start this script (make it executable first), keep the window open. To make the package naming more munki friendly (using a "-" instead of "_") use the "-m" option to start the script: `AppStoreExtract.sh -m`
 
 - Back in the AppStore.app login in to your account and navigate to your purchases (or buy a new App)
   - Click "Install" for all desired packages
