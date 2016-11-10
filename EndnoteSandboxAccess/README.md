@@ -4,8 +4,7 @@
 This Objective-C project tried to grant access to the EndNote settings file using the OS to generate a sandbox securebookmarks file for EndNote to work together with Word 2016. We weren't successful reaching our goal, but the code may help to implement security-scoped bookmarks in your projects.
 
 ###Background information
-The program was developed by "Schnoddelbotz" (https://github.com/schnoddelbotz) based on the findings from
-http://objcolumnist.com/2012/05/21/security-scoped-file-url-bookmarks
+Based on the findings from http://objcolumnist.com/2012/05/21/security-scoped-file-url-bookmarks
 
 But after intense testing we weren't able to reach our goal: We would probably need a valid certificate to sign our app either from Thomson Reuters or Microsoft to successfully write this file.
 
