@@ -67,6 +67,7 @@ while [ "x${myinput}" == "x" ]
 do 
 	find "$AppStoreRoot" -name \*.pkg  | xargs -I {} sh -c 'ln "$1" "$2$(basename $1)" 2> /dev/null ; cp -n "$3/manifest.plist" "$2$(basename $1).plist" ' - {} "$Destination" "$AppStoreRoot"
 	read myinput
+	sleep 0.05
 done
 if [ -t 0 ]; then stty sane; fi
 
