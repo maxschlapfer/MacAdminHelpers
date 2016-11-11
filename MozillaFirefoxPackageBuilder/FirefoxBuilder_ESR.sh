@@ -5,8 +5,7 @@
 # multilingual, it although configures various settings to define the app behaviour,
 # feel free to adapt the cfg file as you need it or add your own extensions and add-ons.
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
-# The script was developed by "Schnoddelbotz" (https://github.com/schnoddelbotz) 
-# based on input from the following sources:
+# The script was developed based on input from the following sources:
 #
 # Firefox.app/Contents/Resources/defaults/pref/
 # https://developer.mozilla.org/en-US/docs/Mozilla/Preferences/A_brief_guide_to_Mozilla_preferences
