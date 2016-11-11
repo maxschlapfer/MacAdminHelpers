@@ -29,8 +29,7 @@ This script was tested under OS X El Capitan 10.11.3.
 
 - The Slack Microsoft Office channel and all the people there: A big thank you goes to this community!
 
-- Thanks to Jan for his scripting help!
-  - https://github.com/schnoddelbotz 
+- ITS Client Delivery group of ETH Zurich
  
 ###How to use the script?
 
