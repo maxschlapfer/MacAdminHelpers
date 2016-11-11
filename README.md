@@ -13,5 +13,5 @@ A package build script to download the full installer from Microsoft and bake th
 
 # other stuff
 
-###EndnoteSandboxAccess
-A (yet) unsuccessful atempt to build a helper app to programmatically grant access to the EndNote settings file for Microsoft Word 2016. Unfortunately, this is not funcional without a proper certificate (probably from Thomson Reuters). But the code may help to implement security-scoped bookmarks in your projects.
+###EndnoteSandboxAccess (retired project)
+An unsuccessful atempt to build a helper app to programmatically grant access to the EndNote settings file for Microsoft Word 2016. Unfortunately, this is not funcional without a proper certificate (probably from Thomson Reuters). But the code may help to implement security-scoped bookmarks in your projects.
