@@ -6,7 +6,7 @@ This script was tested under OS X El Capitan 10.11.3 with Firefox RR and ESR ver
 
 
 ###Based on ideas and scripts from:
-The script was developed by "Schnoddelbotz" (https://github.com/schnoddelbotz) 
+The script was developed by the ITS Client Delivery group of ETH Zurich 
 based on input from the following sources:
 
 - Firefox.app/Contents/Resources/defaults/pref/
