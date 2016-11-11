@@ -41,3 +41,9 @@ If you want to check what folder is used by the AppStore.app, enter this command
 
 ### Known Problems
 If the App ist to small (didn't find an exact size) the extraction might fail sometime, probably when the installation is finished to fast.
+
+
+### Alternatives
+- __AppStoreXtractor__ as a GO project https://github.com/schnoddelbotz/golang-playground
+
+- __mas-cli project__ https://github.com/mas-cli/mas
