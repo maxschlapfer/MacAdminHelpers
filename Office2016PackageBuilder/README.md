@@ -83,15 +83,15 @@ The following parameters are used and might be changed to fit your needs. The de
 	
 	The most recent version is extracted from the MAINURL and is automatically set.
 
-5.	`FULL_INSTALLER="http://go.microsoft.com/fwlink/?linkid=532572"`
+5.	`FULL_INSTALLER="https://go.microsoft.com/fwlink/?linkid=532572"`
 	
 	This URL depends on what you need or where you are based in the world. Default link is the Full Installer from the European server from Microsoft, change it according to your needs:
 
-		AMERICAS:	http://go.microsoft.com/fwlink/?linkid=525133
-		EUROPE:		http://go.microsoft.com/fwlink/?linkid=532572
-		ASIA:		http://go.microsoft.com/fwlink/?linkid=532577
+		AMERICAS:	https://go.microsoft.com/fwlink/?linkid=525133
+		EUROPE:		https://go.microsoft.com/fwlink/?linkid=532572
+		ASIA:		https://go.microsoft.com/fwlink/?linkid=532577
 		
-	More URLs (single Packages, Update Information) are available from http://macadmins.software.
+	More URLs (single Packages, Update Information) are available from https://macadmins.software.
 	
 6.	`OUTNAME="${PRODUCT}_${FULL_VERSION}_${PKG_LANGUAGE}"`
 	
