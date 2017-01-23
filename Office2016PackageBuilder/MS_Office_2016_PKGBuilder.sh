@@ -28,7 +28,8 @@
 # Edited to check the parameter inputs: 2016-01-29
 # Edited to reflect package name change of Microsoft original package: 2016-04-13
 # Added change from zone11 to make the package more Munik and Filewave friendly: 2016-04-19
-# changed Serializer name to reflect new naming from Microsoft
+# Changed Serializer name to reflect new naming from Microsoft: 2016-08-13
+# HTTPS for macadmins.software connection: 2017-01-23
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
 
 
@@ -41,8 +42,8 @@
 PRODUCT="Microsoft_Office_2016"
 PKG_LANGUAGE="ML"
 
-# Define main URL (http://macadmins.software)
-MAINURL="http://macadmins.software/versions.xml"
+# Define main URL (https://macadmins.software)
+MAINURL="https://macadmins.software/versions.xml"
 
 # Get latest version number
 FULL_VERSION=$(curl -s $MAINURL | xmllint --xpath '//latest/o365/text()' -)
@@ -70,11 +71,11 @@ done
 
 
 # Use the URL from macadmins.software from the nearest site to your location
-# 	AMERICAS:	http://go.microsoft.com/fwlink/?linkid=525133
-# 	EUROPE:		http://go.microsoft.com/fwlink/?linkid=532572
-# 	ASIA:		http://go.microsoft.com/fwlink/?linkid=532577
+# 	AMERICAS:	https://go.microsoft.com/fwlink/?linkid=525133
+# 	EUROPE:		https://go.microsoft.com/fwlink/?linkid=532572
+# 	ASIA:		https://go.microsoft.com/fwlink/?linkid=532577
 # Default setting is the European distribution server from Microsoft
-FULL_INSTALLER="http://go.microsoft.com/fwlink/?linkid=532572"
+FULL_INSTALLER="https://go.microsoft.com/fwlink/?linkid=532572"
 
 # Define output name based on naming convention
 OUTNAME="${PRODUCT}_${FULL_VERSION}_${PKG_LANGUAGE}"
