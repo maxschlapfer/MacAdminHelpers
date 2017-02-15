@@ -1,9 +1,14 @@
 #!/bin/bash
 ###
 # Script to extract Installer packages from the Apple AppStore for OS X 
-#
+###
+# last edited: 2017-02-16
+###
 # This script was tested under
-# OS X Mountain Lion v10.8.5, OS X Mavericks 10.9.x, OS X El Capitan 10.11.x and macOS Sierra 10.12.0
+# OS X Mountain Lion v10.8.5
+# OS X Mavericks 10.9.x
+# OS X El Capitan 10.11.x
+# macOS Sierra 10.12.x
 #
 # Based on an idea from Rich Trouton for downloading from the AppStore:
 # http://derflounder.wordpress.com/2013/10/19/downloading-microsofts-remote-desktop-installer-package-from-the-app-store/
@@ -16,22 +21,21 @@
 ###
 # Short documentation
 # - This script needs the temporary download folder from the AppStore App, this is individual by host
-#   and is extracted by "getconf DARWIN_USER_CACHE_DIR"
-#   If you want to access the debug mode of the AppStore (This is no longer working with 10.12 and higher):
+#   and is extracted by using "getconf DARWIN_USER_CACHE_DIR".
+#   In macOS versions before Sierra (10.11.x and older), you can access the debug menu in the AppStore App: 
 #	- Quit the AppStore.app if it is running
-#   	- open the terminal and enter "defaults write com.apple.appstore ShowDebugMenu -bool true"
+#   	- Open the terminal and enter "defaults write com.apple.appstore ShowDebugMenu -bool true"
 #   	- Start AppStore.app and browse the menu Debug
+#	--> The debug menu is no longer accessible with macOS Sierra v10.12.0 or higher.
 # - The folder /Users/Shared/AppStore_Packages is generated and used as the packages output folder
-# - open Terminal and start this script (if needed make it executable first), keep the window open.
-#   if the output wil be used with munikimport add the option "-m" to make the naming munki-friendly
+# - Open Terminal and start this script (if needed make it executable first), keep the window open.
+#   If the output will be used with munikimport add the option "-m" to make the naming munki-friendly
 # - Back in the AppStore.app login in to your account and navigate to your purchases
 #   - Click "Install" for all desired packages
-#   - wait till every download/installation has finished
-# - go back to the terminal and continue the script by pressing any key to stop processing downloads
-# - answer the following question with yes to finalize and clean up the downloaded packages
+#   - Wait till every download/installation has finished
+# - Go back to the terminal and continue the script by pressing any key to stop processing downloads
+# - Answer the following question with yes (y) to finalize and clean up the downloaded packages
 ###
-
-
 
 ###
 # Definition of the local temporary AppStore folder
@@ -61,18 +65,19 @@ else
 fi
 
 echo "Press any key to finish after downloading new software from AppStore."
-myinput="" 
-if [ -t 0 ]; then stty -echo -icanon time 0 min 0; fi
-while [ "x${myinput}" == "x" ]
+myinput=''
+
+if [ -t 0 ]; then stty -echo -icanon -icrnl time 0 min 0; fi
+while [ "x${myinput}" = "x" ]
 do 
 	find "$AppStoreRoot" -name \*.pkg  | xargs -I {} sh -c 'ln "$1" "$2$(basename $1)" 2> /dev/null ; cp -n "$3/manifest.plist" "$2$(basename $1).plist" ' - {} "$Destination" "$AppStoreRoot"
-	read myinput
+	myinput="`cat -v`"
 	sleep 0.05
 done
 if [ -t 0 ]; then stty sane; fi
 
-echo -e '\n\nDo you want to finalize the packages? (N/y)'
-read myinput
+echo -e '\n\nDo you want to finalize the packages? (N/y)\n'
+read -n 1 -s  myinput
 if [ "$myinput" == "y" ]
 then
 	for swpkg in ${Destination}*.plist
@@ -104,7 +109,7 @@ then
 	for swpkg in ${Destination}*.pkg
 	do
 		finaldmg=`echo ${swpkg} | perl -pe 's/\.pkg$//'`
-		echo "\ncreating ${finaldmg}.dmg"
+		echo -e "\ncreating ${finaldmg}.dmg"
 		hdiutil create -srcfolder "${swpkg}" -format UDRO "${finaldmg}"
 		rm "${swpkg}"
 	done
