@@ -162,6 +162,7 @@ cat <<- 'EOF' > ${SCRIPT_DIR}/postinstall
 # Define variables
 submit_diagnostic_data_to_microsoft=false
 turn_off_first_run_setup=true
+one_note_int_array='(23, 18, 19, 17, 16, 5, 10, 1, 11, 13, 4, 9, 14, 2, 7, 12)'
 
 # Define what Apps are part of Office 2016, if anything changes in the future
 Office2016Apps=(Excel OneNote Outlook PowerPoint Word)
@@ -196,10 +197,17 @@ ConfigureOffice2016FirstRun()
    /usr/bin/defaults write /Library/Preferences/com.microsoft."$app" kSubUIAppCompletedFirstRunSetup1507 -bool "$turn_off_first_run_setup"
    /usr/bin/defaults write /Library/Preferences/com.microsoft."$app" SendAllTelemetryEnabled -bool "$submit_diagnostic_data_to_microsoft"
 
-    # Outlook and OneNote require one additional first run setting to be disabled
-    if [[ $app == "Outlook" ]] || [[ $app == "onenote.mac" ]]; then
+    # Outlook requires one additional first run setting to be disabled
+    if [[ $app == "Outlook" ]]; then
         /usr/bin/defaults write /Library/Preferences/com.microsoft."$app" FirstRunExperienceCompletedO15 -bool "$turn_off_first_run_setup"
     fi
+    
+    # OneNote has a different structure for suppressing the "What's New" dialogs - an array of ints
+    if [[ $app == "onenote.mac" ]]; then
+        /usr/bin/defaults write /Library/Preferences/com.microsoft."$app" ONWhatsNewShownItemIds -array "${one_note_int_array}"
+        /usr/bin/defaults write /Library/Preferences/com.microsoft."$app" FirstRunExperienceCompletedO15 -bool "$turn_off_first_run_setup"
+    fi
+        
 }
 
 # Remove an old 2016 volume licensing file
