@@ -164,7 +164,7 @@ cat <<- 'EOF' > "${SCRIPT_DIR}"/postinstall
 # Define variables
 submit_diagnostic_data_to_microsoft=false
 turn_off_first_run_setup=true
-one_note_int_array='(23, 18, 19, 17, 16, 5, 10, 1, 11, 13, 4, 9, 14, 2, 7, 12)'
+one_note_int_array="-int 23 -int 18 -int 19 -int 17 -int 16 -int 5 -int 10 -int 1 -int 11 -int 13 -int 4 -int 9 -int 14 -int 2 -int 7 -int 12"
 
 # Define what Apps are part of Office 2016, if anything changes in the future
 Office2016Apps=(Excel OneNote Outlook PowerPoint Word)
@@ -206,7 +206,7 @@ ConfigureOffice2016FirstRun()
     
     # OneNote has a different structure for suppressing the "What's New" dialogs - an array of ints
     if [[ $app == "onenote.mac" ]]; then
-        /usr/bin/defaults write /Library/Preferences/com.microsoft."$app" ONWhatsNewShownItemIds -array "${one_note_int_array}"
+        /usr/bin/defaults write /Library/Preferences/com.microsoft."$app" ONWhatsNewShownItemIds -array ${one_note_int_array}
         /usr/bin/defaults write /Library/Preferences/com.microsoft."$app" FirstRunExperienceCompletedO15 -bool "$turn_off_first_run_setup"
     fi
         
