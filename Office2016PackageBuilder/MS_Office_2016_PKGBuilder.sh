@@ -23,13 +23,14 @@
 # 
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
 # Adapted for use at ETH Zurich by Max Schlapfer
-# Edited for newest release: 2016-01-18 (15.18)
-# Edited to configure AutoUpdate: 2016-01-24
-# Edited to check the parameter inputs: 2016-01-29
-# Edited to reflect package name change of Microsoft original package: 2016-04-13
-# Added change from zone11 to make the package more Munik and Filewave friendly: 2016-04-19
-# Changed Serializer name to reflect new naming from Microsoft: 2016-08-13
-# HTTPS for macadmins.software connection: 2017-01-23
+# 2016-01-18 - Edited for newest release (15.18)
+# 2016-01-24 - Edited to configure AutoUpdate
+# 2016-01-29 - Edited to check the parameter inputs
+# 2016-04-13 - Edited to reflect package name change of Microsoft original package
+# 2016-04-19 - Added change from zone11 to make the package more Munik and Filewave friendly
+# 2016-08-13 - Changed Serializer name to reflect new naming from Microsoft
+# 2017-01-23 - HTTPS for macadmins.software connection
+# 2017-03-04 - Added Input from @eholtam to suppress OneNote initial dialogs
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
 
 
@@ -47,10 +48,10 @@ MAINURL="https://macadmins.software/versions.xml"
 
 # Get latest version number
 FULL_VERSION=$(curl -s $MAINURL | xmllint --xpath '//latest/o365/text()' -)
- 
+
 # Determine working directory
 EXE_DIR=$(dirname "$0")
-
+ 
 # Excluding packages from installing, all listed Apps are excluded from the installation
 # this is done with an InstallerChoices.xml that is generated based on the arguments.
 if [ "$1" = "--exclude" ]; then
@@ -92,8 +93,7 @@ PKG_ID="ch.ethz.mac.pkg.${PRODUCT}.${PKG_LANGUAGE}"
 # https://www.microsoft.com/Licensing/servicecenter/default.aspx
 # Attention: You need a login and a valid contract with Microsoft!
 
-LICENSE_DIR="${EXE_DIR}/volume_license"
-								
+LICENSE_DIR="${EXE_DIR}/volume_license"				
 	if [[ -e "${LICENSE_DIR}/Microsoft_Office_2016_VL_Serializer_2.0.pkg" ]]; then
 	    echo "Valid license PKG found."
 	else
@@ -196,8 +196,8 @@ ConfigureOffice2016FirstRun()
         app="onenote.mac";
     fi
 
-   /usr/bin/defaults write /Library/Preferences/com.microsoft."$app" kSubUIAppCompletedFirstRunSetup1507 -bool "$turn_off_first_run_setup"
-   /usr/bin/defaults write /Library/Preferences/com.microsoft."$app" SendAllTelemetryEnabled -bool "$submit_diagnostic_data_to_microsoft"
+	/usr/bin/defaults write /Library/Preferences/com.microsoft."$app" kSubUIAppCompletedFirstRunSetup1507 -bool "$turn_off_first_run_setup"
+	/usr/bin/defaults write /Library/Preferences/com.microsoft."$app" SendAllTelemetryEnabled -bool "$submit_diagnostic_data_to_microsoft"
 
     # Outlook requires one additional first run setting to be disabled
     if [[ $app == "Outlook" ]]; then
@@ -206,10 +206,9 @@ ConfigureOffice2016FirstRun()
     
     # OneNote has a different structure for suppressing the "What's New" dialogs - an array of ints
     if [[ $app == "onenote.mac" ]]; then
-        /usr/bin/defaults write /Library/Preferences/com.microsoft."$app" ONWhatsNewShownItemIds -array ${one_note_int_array}
-        /usr/bin/defaults write /Library/Preferences/com.microsoft."$app" FirstRunExperienceCompletedO15 -bool "$turn_off_first_run_setup"
+		/usr/bin/defaults write /Library/Preferences/com.microsoft."$app" ONWhatsNewShownItemIds -array ${one_note_int_array}
+		/usr/bin/defaults write /Library/Preferences/com.microsoft."$app" FirstRunExperienceCompletedO15 -bool "$turn_off_first_run_setup"
     fi
-        
 }
 
 # Remove an old 2016 volume licensing file
@@ -217,7 +216,7 @@ ConfigureOffice2016FirstRun()
 # check for existance of Office 2016 licensing file and remove it if found
 if [[ -e "/Library/Preferences/com.microsoft.office.licensingV2.plist" ]]; then
     echo "$(date): old Volume License file found. Removing it before installing new one."      2>&1 | tee -a $LOGFILE
-        rm /Library/Preferences/com.microsoft.office.licensingV2.plist
+	rm /Library/Preferences/com.microsoft.office.licensingV2.plist
 else
     echo "$(date): Volume License file not found! Installing new one now."      2>&1 | tee -a $LOGFILE
 fi
@@ -244,7 +243,7 @@ fi
 IFS=$'\n'
 for i in $(dscl . -list /Users PrimaryGroupID | grep ' 20$'| cut -d' ' -f1)
 do
-   sudo -- su - $i -c 'defaults write ~/Library/Group\ Containers/UBF8T346G9.Office/com.microsoft.officeprefs DefaultsToLocalOpenSave -bool TRUE'
+	sudo -- su - $i -c 'defaults write ~/Library/Group\ Containers/UBF8T346G9.Office/com.microsoft.officeprefs DefaultsToLocalOpenSave -bool TRUE'
 done
 unset IFS
 
@@ -253,8 +252,8 @@ unset IFS
 for APPNAME in ${Office2016Apps[*]}
 do
     if [[ -e "/Applications/Microsoft $APPNAME.app" ]]; then
-        app=$APPNAME
-        ConfigureOffice2016FirstRun
+    	app=$APPNAME
+    	ConfigureOffice2016FirstRun
     fi
 done
 
@@ -274,7 +273,6 @@ hdiutil create -volname ${OUTNAME} -srcfolder "${EXE_DIR}/${OUTNAME}.pkg" -forma
 # clean up after building
 rm -rf "${EXE_DIR}/${OUTNAME}"
 rm -f "${EXE_DIR}/${OUTNAME}.pkg"
+rm -rf "${EMPTY_DIR}"
 
 echo "DONE"
-
-exit 0
