@@ -5,11 +5,11 @@
 
 **Important:** You need a Volume License from Microsoft to use this script.
 
-This scripts downloads the Full Installer for Microsoft Office, adds the Volume License Installer and some configurations and generates a package without changing the original package from Microsoft. After that it puts the PKG in a diskimage and cleans the temp. directory.
+This scripts downloads the Full Installer for Microsoft Office, adds the Volume License Installer and some configurations and generates a package without changing the original package from Microsoft. After that it puts the PKG in a diskimage and cleans the temporary directory.
 
 When deploying with the final package, sending Telemetry Data to Microsoft is disabled, the "First Run" and "What's New" dialogs are turned off and the AutoUpdater will be set to manually check for updates and the insider program feature is disabled.
 
-This script was tested under OS X El Capitan 10.11.3.
+This script was tested under macOS Sierra, v10.12.3.
 
 
 ###Based on ideas and scripts from:
@@ -51,10 +51,10 @@ This script was tested under OS X El Capitan 10.11.3.
 
 	If you want to exclude some packages you can do with the argument `--exclude` plus a quoted list of Apps or Office parts to exclude (this will generate an InstallerChoices.xml that is used during the Office installation):
 	
-	The following Installer Choices are available (with version 15.18):
+	The following Installer Choices are available (with version 15.31):
 	`word` `excel` `powerpoint` `onenote.mac` `outlook` and `autoupdate`
 
-	**Important: Please do not deactivate the installation of the fonts, frameworks and proofing tools, as you might end up with unstable and unsupported setup.**
+	**Important: Please do not deactivate the installation of the fonts, frameworks and proofing tools, as you might end up with an unstable and unsupported setup.**
 
 	for example `./MS_Office_2016_PKGBuilder.sh --exclude "onenote.mac autoupdate"` to exclude OneNote and the AutoUpdater app or run `./MS_Office_2016_PKGBuilder.sh`without any arguments to install everything.
 	
@@ -74,7 +74,7 @@ The following parameters are used and might be changed to fit your needs. The de
 	
 	As Office 2016 is multi-language this tag is pre-set to ML.
 
-3.	`MAINURL="http://macadmins.software/versions.xml"`
+3.	`MAINURL="https://macadmins.software/versions.xml"`
 	
 	This site is officially maintained by Microsoft.
 	You should not change this value.
@@ -122,4 +122,5 @@ The scripts generates a postinstall script to apply all the desired settings. To
 
 
 ### Known Issues
-- Under some circumstances the "What's new" dialog within OneNote still shows up. Haven't found out where the problem is as it should not show up for VL serialized installations.
+- __This issue sees to be solved__: Under some circumstances the "What's new" dialog within OneNote still shows up. Haven't found out where the problem is as it should not show up for VL serialized installations.
+- No further isses have been identified yet.
