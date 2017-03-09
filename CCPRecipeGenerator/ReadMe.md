@@ -67,7 +67,7 @@ After the overrides have successfully been generated, you can start the build pr
 
 
 ### Known issues
-1. The following packages failed during build and need to be investigated further:
+- The following packages failed during build and need to be investigated further:
   - Adobe_Edge_Code_CC_(Preview)_1.0_ML.pkg.recipe
   - Adobe_Experience_Design_CC_(Beta)_0.6.16_ML.pkg.recipe
   - Adobe_Application_Manager_6.2.10_ML.pkg.recipe
