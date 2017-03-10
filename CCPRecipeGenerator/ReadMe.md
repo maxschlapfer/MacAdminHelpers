@@ -50,7 +50,7 @@ If your organisation is using "Deployment Pools", please enter it here.
 
 - Edit the script __CCPReceiptGenerator.sh__  
     - __Organisation__: The name of your Organisation based on the Adobe Dashboard naming  
-    - __SerialNumber__: The serialnumber provided from Adobe, remove the dashes  
+    - __SerialNumber__: The serial number provided from Adobe, remove the dashes  
     - __LicenseType__: Is either `enterprise` or `team`  
     - __Identifier__: Set the identifier based on your needs (com.company.XY)  
     - __LanguageShort__: This short string is only used for naming the final packages, should be in the same order as the language array: *(EN DE)*
