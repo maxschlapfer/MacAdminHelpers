@@ -34,27 +34,42 @@ _Important_: Do not change the XX-tags! They will be filled automatically by the
     - __Identifier__  
 Enter your organisations name. (com.company.XY)
     - __INCLUDE_UPDATES__  
-[__true__/false] :set to true if you want to include all updates with the base package.
+[ __true__ / false ] : set to true if you want to include all updates with the base package.
     - __RUM_ENABLED__  
-[true/__false__] : Include RUM in the package or not.
+[ true / __false__ ] : Include RUM in the package or not.
     - __UPDATES_ENABLED__  
-[true/__false__] : Define if the end user should be able to update the app.
+[ true / __false__ ] : Define if the end user should be able to update the app.
     - __APPS_PANEL_ENABLED__  
-[true/__false__] : Show the app panel to the end user.
+[ true / __false__ ] : Show the app panel to the end user.
     - __ADMIN_PRIVILEGES_ENABLED__  
-[true/__false__] : Enable this to allow the CC Desktop application to run with admin rights, to let the end user install/update CC apps.
+[ true / __false__ ] : Enable this to allow the CC Desktop application to run with admin rights, to let the end user install/update CC apps.
     - __DEPLOYMENT_POOL__  
 If your organisation is using "Deployment Pools", please enter it here.
     - __MATCH_OS_LANGUAGE__  
-[true/__false__] : packages are built based on the active language of the logged in user. As we define the languags later, this is set to false.
+[ true / __false__ ] : packages are built based on the active language of the logged in user. As we define the languages later, this is set to false.
 
 - Edit the script __CCPReceiptGenerator.sh__  
     - __Organisation__: The name of your Organisation based on the Adobe Dashboard naming  
     - __SerialNumber__: The serialnumber provided from Adobe, remove the dashes  
     - __LicenseType__: Is either `enterprise` or `team`  
     - __Identifier__: Set the identifier based on your needs (com.company.XY)  
-    - __Language__: Add the languages of the install packages as an array: (en_US de_DE)  
-    - __LanguageShort__: This short string is only used for naming the final packages, should be in the same order as the language array: (EN DE)
+    - __LanguageShort__: This short string is only used for naming the final packages, should be in the same order as the language array: *(EN DE)*
+    - __Language__: Add the languages of the install packages as an array: *(en_US de_DE)*  
+    Complete list of supported languages and language codes used in Adobe packages:  
+
+		| Language | Code |   | Language | Code |   | Language | Code |
+		| :---: | :---: |:---:| :---: | :---: |:---:| :---: | :---: |
+		| Czech | cs_CZ |   | Finnish | fi_FI |   | Dutch | nl_NL |
+		| Danish | da_DK |   | French Canadian | fr_CA |   | Polish  | pl_PL |
+		| German | de_DE |   | French | fr_FR |   | Portuguese (Brazilian) | pt_BR |
+		| English (UAE) | en_AE |   | North African French | fr_MA |   | Russian | ru_RU |
+		| English (Intl.) | en_GB |   | Hungarian | hu_HU |   | Swedish | sv_SE |
+		| English (Israel) | en_IL |   | Italian | it_IT |   | Turkish | tr_TR |
+		| **English (U.S.)** | **en_US** |   | Japanese | ja_JP |   | Ukrainian | uk_UA |
+		| Spanish | es_ES |   | Korean | ko_KR |   | Chinese Simplified | zh_CN |
+		| Spanish (Mexico) | es_MX |   | Norwegian | nb_NO |   | Chinese Traditional | zh_TW |
+		_(bold : Default Package Language)_
+
 
 
 ### Have the work done
