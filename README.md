@@ -4,6 +4,12 @@ Helpers for macOS packaging and MacAdmins
 ###AppStore Extractor Script
 A script to extract installer packages from the Apple AppStore for macOS.
 
+###Adobe CCP Recipe Generator Script
+A script to produce all needed override files to package all Adobe CC products using AutoPkg.
+
+###Disable802.1x code snippet
+A little code snippet to disable the 802.1x automatic connection.
+
 ###Mozilla Firefox PackageBuilder Script
 A package build script to download the full installer from Mozilla and bake some AddOns and Language packs and various configurations into the package for deployment inside your organisation.
 
