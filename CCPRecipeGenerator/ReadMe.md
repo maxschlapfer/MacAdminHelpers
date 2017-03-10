@@ -17,6 +17,9 @@ Install and configure the AutoPkg environment as you need it. [http://autopkg.gi
 - __Creative Cloud Packager from Adobe__  
 Get you CCP installer from the Adobe Dashboard or your responsible Adobe contact at your organisation.
 
+- __Xcode Command éLine Tools__  
+Make sure the Xcode Command Line Tools are installed.
+
 - __Free disk space__  
 Make sure you have enough free space available on the build machine, as a full CC package set is about 35 GB per language.
 
