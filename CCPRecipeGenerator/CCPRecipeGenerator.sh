@@ -66,6 +66,14 @@ fi
 AutoPkgRecipePath="$(autopkg repo-list | cut -d" " -f1)"
 cp ./Custom_CreativeCloudApp.pkg.recipe "${AutoPkgRecipePath}/Adobe/${MasterRecipe}"
 
+# Get override path to find the generated files, if empty set it to a default value
+OverridePath=$(${AUTOPKG} info | grep RECIPE_OVERRIDE_DIRS | cut -d"'" -f4)
+if [ -z "${OverridePath// }" ]; then
+	echo "\nAutoPkg override path not defined, using standard destination (~/Library/AutoPkg/RecipeOverrides)\n"
+	ActiveUser=$(id -un)
+	OverridePath="/Users/${ActiveUser}/Library/AutoPkg/RecipeOverrides"
+fi
+
 # Get an actual list of of Adobe Products and version
 # based on the ListFeed.py but edited for better handling within this script
 echo "\nGetting Adobe product list with most recent versions...\n"
@@ -92,9 +100,6 @@ for ((i=0;i<${#Language[@]};++i)); do
 		# Generate override file
 		${AUTOPKG} make-override -n ${PackageName}.pkg ${MasterRecipe}
 		
-		# Get override path to find the generated files
-		OverridePath=$(${AUTOPKG} info | grep RECIPE_OVERRIDE_DIRS | cut -d"'" -f4)
-
 		# replace variables to reflect product specific settings
 		sed -i "" -e "s/local.*/${Identifier}.${ShortPackageName}\<\/string\>/g" "${OverridePath}/${PackageName}.pkg.recipe"
 		sed -i "" -e "s/XX-ORGNAME-XX/${Organisation}/g" "${OverridePath}/${PackageName}.pkg.recipe"
