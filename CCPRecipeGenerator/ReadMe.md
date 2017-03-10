@@ -13,11 +13,9 @@ To start on a newly installed (build) machine, install the following packages be
 
 - __AutoPkg__  
 Install and configure the AutoPkg environment as you need it. [http://autopkg.github.io/autopkg](http://autopkg.github.io/autopkg)  
-    - If you want to move some folders to other destinations (for space reasons), please define at least the AutoPkg Cache and Overrides folders:  
-    ```
-    defaults write com.github.autopkg CACHE_DIR /path/to/cache/dir
-    defaults write com.github.autopkg RECIPE_OVERRIDE_DIRS /path/to/override/dir
-    ```
+  - If you want to move some folders to other destinations, please define at least the AutoPkg Cache and Overrides folders:  
+    `defaults write com.github.autopkg CACHE_DIR /path/to/cache/dir`  
+    `defaults write com.github.autopkg RECIPE_OVERRIDE_DIRS /path/to/override/dir`
     
 - __Creative Cloud Packager from Adobe__  
 Get you CCP installer from the Adobe Dashboard or your responsible Adobe contact at your organisation.
