@@ -18,7 +18,7 @@ Install and configure the AutoPkg environment as you need it. [http://autopkg.gi
     `defaults write com.github.autopkg RECIPE_OVERRIDE_DIRS /path/to/override/dir`
     
 - __Creative Cloud Packager from Adobe__  
-Get you CCP installer from the Adobe Dashboard or your responsible Adobe contact at your organisation.
+Get the CCP installer from the Adobe Dashboard or your responsible Adobe contact at your organisation.
 
 - __Xcode Command Line Tools__  
 Make sure the Xcode Command Line Tools are installed.
