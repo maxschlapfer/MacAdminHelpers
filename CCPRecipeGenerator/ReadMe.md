@@ -68,6 +68,7 @@ If your organisation is using "Deployment Pools", please enter it here.
 		| **English (U.S.)** | **en_US** |   | Japanese | ja_JP |   | Ukrainian | uk_UA |
 		| Spanish | es_ES |   | Korean | ko_KR |   | Chinese Simplified | zh_CN |
 		| Spanish (Mexico) | es_MX |   | Norwegian | nb_NO |   | Chinese Traditional | zh_TW |
+		
 		_The default language for packages is shown in bold_
 
 
