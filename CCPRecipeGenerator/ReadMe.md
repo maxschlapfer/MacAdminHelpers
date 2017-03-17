@@ -79,7 +79,7 @@ If your organisation is using "Deployment Pools", please enter it here.
 - Run the generator script `ReceiptGenerator.sh`  
 The recipes are saved in the AutoPkg overrides folder. At the same time
 a file with all recipes is generated and can be used to run all recipes at once.  
-After the overrides have successfully been generated, you can start the build process. If you don't need all packages built, then edit 'AutoPKGRunSource.txt' and delete all packages you don^t want to build.
+After the overrides have successfully been generated, you can start the build process. If you don't need all packages built, then edit 'AutoPKGRunSource.txt' and delete all packages you don't want to build.
 
 - Run autopkg to build all packages based on the generated overrides  
 `autopkg run --recipe-list ./AutoPKGRunFile.txt` 
