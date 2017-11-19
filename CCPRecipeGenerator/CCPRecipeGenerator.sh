@@ -44,7 +44,7 @@ AutoPKGRunSource="./AutoPKGRunSource.txt"				# A list of generated overrides, us
 # AutoPkg specific variables
 AutoPkgBaseURL="https://github.com/autopkg/autopkg/releases/latest"
 AutoPkgVersion=$(curl -sL ${AutoPkgBaseURL} | grep "css-truncate-target" | sed -n '1 p' | sed 's/<span class=\"css-truncate-target\">//;s/<\/span>//' | tr -d 'v' | xargs)
-AutoPkgDownloadURL="https://github.com/autopkg/autopkg/releases/download/v${Version}/autopkg-${Version}.pkg"
+AutoPkgDownloadURL="https://github.com/autopkg/autopkg/releases/download/v${AutoPkgVersion}/autopkg-${AutoPkgVersion}.pkg"
 
 # Default CCP path, should not be changed.
 CCPPath="/Applications/Utilities/Adobe Application Manager/CCP/CreativeCloudPackager.app/Contents/MacOS/CreativeCloudPackager"
@@ -66,7 +66,7 @@ AutoPkgInstalled=$(which autopkg)
 if [ -z "${AutoPkgInstalled// }" ]; then
 	echo "\nAutoPkg is not installed on this machine\nInstalling it now.\n"
 	curl -Lo /tmp/autopkg-${AutoPkgVersion}.pkg ${AutoPkgDownloadURL}
-	installer -pkg "/tmp/autopkg-${AutoPkgVersion}.pkg" -target /
+	sudo installer -pkg "/tmp/autopkg-${AutoPkgVersion}.pkg" -target /
 	echo "\nAutoPkg is now in Version ${AutoPkgVersion} installed. Continuing...\n"
 else
 	echo "\nAutoPkg is installed. Continuing...\n"
