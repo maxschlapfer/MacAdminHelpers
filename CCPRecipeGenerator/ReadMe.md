@@ -1,52 +1,36 @@
 # Automating the generation of Adobe CC package override files for AutoPkg
   
-This script helps you customize the build process for your organisation.
-Then generates an override file for each Adobe product and builds all packages.
+This script helps you customize the build process of Adobe CC packages for your organisation.
+It generates an override file for each Adobe product and then builds all packages.
 
-This script is based on the AutoPkg project and the CCP-Recipes from "Mosen" [https://github.com/mosen/ccp-recipes](https://github.com/mosen/ccp-recipes). The master recipe file and the Adobe list feed script used for this project have been taken and adapted from Mosen's project.
+This script is based on the AutoPkg project and the CCP Recipes from "Mosen" [https://github.com/autopkg/adobe-ccp-recipes](https://github.com/autopkg/adobe-ccp-recipes).
 
-This workflow has been tested on macOS Sierra 10.12.3.
+This workflow has been tested on macOS High Sierra 10.13.1.
 
 ### Prerequisites
 
-To start on a newly installed (build) machine, install the following packages before using the script:
-
-- __AutoPkg__  
-Install and configure the AutoPkg environment as you need it. [http://autopkg.github.io/autopkg](http://autopkg.github.io/autopkg)  
-  - If you want to move some folders to other destinations, please define at least the AutoPkg Cache and Overrides folders:  
-    `defaults write com.github.autopkg CACHE_DIR /path/to/cache/dir`  
-    `defaults write com.github.autopkg RECIPE_OVERRIDE_DIRS /path/to/override/dir`
+To start on a newly installed (build) machine, install the following packages/tools before using the script:
     
 - __Creative Cloud Packager from Adobe__  
-Get the CCP installer from the Adobe Dashboard or your responsible Adobe contact at your organisation.
+Get the CCP installer from the Adobe Admin Console or your responsible Adobe contact at your organisation (or download it from here: [https://www.adobe.com/go/ccp_installer_osx](https://www.adobe.com/go/ccp_installer_osx)
 
 - __Xcode Command Line Tools__  
 Make sure the Xcode Command Line Tools are installed.
 
+- __Important__  
+There must be no other Adobe CC applications or the Creative Cloud application installed on the machine building packages. Otherwise the build process will fail.
+
+- __AutoPkg__  
+This script is using AutoPkg to build the packages, it will install it when not present, if you prefer to install/configure AutoPkg manually, please do at least the following steps:  
+Install and configure the AutoPkg environment. [http://autopkg.github.io/autopkg](http://autopkg.github.io/autopkg)  
+  - If you want to move some folders to other destinations, please define at least the AutoPkg Cache and Overrides folders:  
+    `defaults write com.github.autopkg CACHE_DIR /path/to/cache/dir`  
+    `defaults write com.github.autopkg RECIPE_OVERRIDE_DIRS /path/to/override/dir`
+
 - __Free disk space__  
-Make sure you have enough free space available on the build machine, as a full CC package set is about 35 GB per language.
+Make sure you have enough free space available on the build machine, as a full CC package set is about 40 GB per language.
 
 ### Configuration	
-- Edit the __Custom_CreativeCloudApp.pkg.recipe__  
-_Important_: Do not change the XX-tags! They will be filled automatically by the script according to your definitions.
-
-    Possible configurations (default settings in bold):
-    - __Identifier__  
-Enter your organisations name. (com.company.XY)
-    - __INCLUDE_UPDATES__  
-[ __true__ / false ] : set to true if you want to include all updates with the base package.
-    - __RUM_ENABLED__  
-[ true / __false__ ] : Include RUM in the package or not.
-    - __UPDATES_ENABLED__  
-[ true / __false__ ] : Define if the end user should be able to update the app.
-    - __APPS_PANEL_ENABLED__  
-[ true / __false__ ] : Show the app panel to the end user.
-    - __ADMIN_PRIVILEGES_ENABLED__  
-[ true / __false__ ] : Enable this to allow the CC Desktop application to run with admin rights, to let the end user install/update CC apps.
-    - __DEPLOYMENT_POOL__  
-If your organisation is using "Deployment Pools", please enter it here.
-    - __MATCH_OS_LANGUAGE__  
-[ true / __false__ ] : packages are built based on the active language of the logged in user. As we define the languages later, this is set to false.
 
 - Edit the script __CCPReceiptGenerator.sh__  
     - __Organisation__: The name of your Organisation based on the Adobe Dashboard naming  
@@ -70,13 +54,18 @@ If your organisation is using "Deployment Pools", please enter it here.
 		| Spanish (Mexico) | es_MX |   | Norwegian | nb_NO |   | Chinese Traditional | zh_TW |
 		
 		_The default language for packages is shown in bold_
+	- __adminPrivilegesEnabled__: [ true / __false__ ] : Enable this to allow the CC Desktop application to run with admin rights, to let the end user install/update CC apps.
+	- __matchOSLanguage__: [ true / __false__ ] : packages are built based on the active language of the logged in user. As we define the languages later, this is set to false.
+	- __rumEnabled__: [ true / __false__ ] : Include RUM in the package or not.
+	- __updatesEnabled__: [ true / __false__ ] : Define if the end user should be able to update the app.
+	- __appsPanelEnabled__: [ true / __false__ ] : Show the app panel to the end user.
 
 
 
 ### Have the work done
-- Run the Creative Cloud Packager one time manually, log in and configure the app as you need it in your organisation.
+- Run the Creative Cloud Packager one time manually, log in with your Adobe ID and configure the app as you need it in your organisation.
 
-- Run the generator script `ReceiptGenerator.sh`  
+- Run the generator script `CCPRecipeGenerator.sh`  
 The recipes are saved in the AutoPkg overrides folder. At the same time
 a file with all recipes is generated and can be used to run all recipes at once.  
 After the overrides have successfully been generated, you can start the build process. If you don't need all packages built, then edit 'AutoPKGRunSource.txt' and delete all packages you don't want to build.
@@ -85,7 +74,7 @@ After the overrides have successfully been generated, you can start the build pr
 `autopkg run --recipe-list ./AutoPKGRunFile.txt` 
 
 - Or run autopkg manually for a single override:  
-`autopkg run "PackageName"`
+`autopkg run "PackageName.pkg"`
 
 
 ### Known issues
