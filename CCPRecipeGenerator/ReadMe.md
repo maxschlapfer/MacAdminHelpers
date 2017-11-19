@@ -28,7 +28,9 @@ Install and configure the AutoPkg environment. [http://autopkg.github.io/autopkg
     `defaults write com.github.autopkg RECIPE_OVERRIDE_DIRS /path/to/override/dir`
 
 - __Free disk space__  
-Make sure you have enough free space available on the build machine, as a full CC package set is about 40 GB per language.
+Make sure you have enough free space available on the build machine:  
+	-	A full CC package set is about 40 GB per language
+	-	The CCP Cache needs additional 20-25 GBs
 
 ### Configuration	
 
