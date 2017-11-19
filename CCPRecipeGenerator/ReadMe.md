@@ -5,7 +5,7 @@ It generates an override file for each Adobe product and then builds all package
 
 This script is based on the AutoPkg project and the CCP Recipes from "Mosen" [https://github.com/autopkg/adobe-ccp-recipes](https://github.com/autopkg/adobe-ccp-recipes).
 
-This workflow has been tested on macOS High Sierra 10.13.1.
+This script and its workflow has been tested on macOS Sierra, version 10.12.6 and macOS High Sierra, version 10.13.1.
 
 ### Prerequisites
 
@@ -78,11 +78,5 @@ After the overrides have successfully been generated, you can start the build pr
 
 
 ### Known issues
-- The following packages failed during build and need to be investigated further:
-  - Adobe_Edge_Code_CC_(Preview)_1.0_ML.pkg.recipe
-  - Adobe_Experience_Design_CC_(Beta)_0.6.16_ML.pkg.recipe
-  - Adobe_Application_Manager_6.2.10_ML.pkg.recipe
-  - Adobe_Edge_Inspect_CC_1.5_ML.pkg.recipe
-  - Adobe_Edge_Reflow_CC_(Preview)_2.0_ML.pkg.recipe
-  - Adobe_Edge_Animate_CC_(2015)_6.0_ML.pkg.recipe
-  - Adobe_Touch_App_Plugins_1.0_ML.pkg.recipe
+- This scripts has the same known limitations as the AutoPkg CCP Recipes do.  
+[https://github.com/autopkg/adobe-ccp-recipes](https://github.com/autopkg/adobe-ccp-recipes)
