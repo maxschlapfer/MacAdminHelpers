@@ -9,6 +9,7 @@
 # OS X Mavericks 10.9.x
 # OS X El Capitan 10.11.x
 # macOS Sierra 10.12.x
+# macOS High Sierra 10.13.1
 #
 # Based on an idea from Rich Trouton for downloading from the AppStore:
 # http://derflounder.wordpress.com/2013/10/19/downloading-microsofts-remote-desktop-installer-package-from-the-app-store/
