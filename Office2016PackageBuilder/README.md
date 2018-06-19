@@ -9,7 +9,7 @@ This scripts downloads the Full Installer for Microsoft Office, adds the Volume 
 
 When deploying with the final package, sending Telemetry Data to Microsoft is disabled, the "First Run" and "What's New" dialogs are turned off and the AutoUpdater will be set to manually check for updates and the insider program feature is disabled.
 
-This script was tested under macOS Sierra, v10.12.3.
+This script was tested under macOS High Sierra, v10.13.5.
 
 
 ###Based on ideas and scripts from:
@@ -51,8 +51,8 @@ This script was tested under macOS Sierra, v10.12.3.
 
 	If you want to exclude some packages you can do with the argument `--exclude` plus a quoted list of Apps or Office parts to exclude (this will generate an InstallerChoices.xml that is used during the Office installation):
 	
-	The following Installer Choices are available (with version 15.31):
-	`word` `excel` `powerpoint` `onenote.mac` `outlook` and `autoupdate`
+	The following Installer Choices are available (with version 16.14):
+	`word` `excel` `powerpoint` `OneDrive` `onenote.mac` `outlook` and `autoupdate`
 
 	**Important: Please do not deactivate the installation of the fonts, frameworks and proofing tools, as you might end up with an unstable and unsupported setup.**
 
