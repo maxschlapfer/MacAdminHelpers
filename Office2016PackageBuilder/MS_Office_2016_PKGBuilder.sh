@@ -31,6 +31,7 @@
 # 2016-08-13 - Changed Serializer name to reflect new naming from Microsoft
 # 2017-01-23 - HTTPS for macadmins.software connection
 # 2017-03-04 - Added Input from @eholtam to suppress OneNote initial dialogs
+# 2018-06-19 - Added support for OneDrive
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
 
 
@@ -62,13 +63,13 @@ fi
 
 for DisabledPKG in ${DisabledPackages[*]}
 do
-	echo $DisabledPKG | egrep -v '(word|excel|powerpoint|onenote.mac|outlook|autoupdate)'
+	echo $DisabledPKG | egrep -v '(word|excel|powerpoint|OneDrive|onenote.mac|outlook|autoupdate)'
 	
 	if [ $? -eq 0 ]; then
-		echo "Sorry, bad arguments: You can only disable the installation of Word, Excel, PowerPoint, Outlook, OneNote or the AutoUpdater."
-		echo "The only valid options are: word excel powerpoint onenote.mac outlook and autoupdate, each separated by space."
-		echo "For Example to disable OneNote and the AutoUpdater."
-		echo "./MS_Office_2016_PKGBuilder.sh --exclude \"onenote.mac autoupdate\""
+		echo "Sorry, bad arguments: You can only disable the installation of Word, Excel, PowerPoint, Outlook, OneDrive OneNote or the AutoUpdater."
+		echo "The only valid options are: word excel powerpoint onenote.mac outlook OneDrive and autoupdate, each separated by space."
+		echo "For Example to disable OneNote, OneDrive, and the AutoUpdater:"
+		echo "./MS_Office_2016_PKGBuilder.sh --exclude \"onenote.mac OneDrive autoupdate\""
 		exit 1
 	fi
 done
@@ -167,7 +168,7 @@ turn_off_first_run_setup=true
 one_note_int_array="-int 23 -int 22 -int 18 -int 19 -int 17 -int 16 -int 5 -int 10 -int 1 -int 11 -int 13 -int 4 -int 9 -int 14 -int 2 -int 7 -int 12"
 
 # Define what Apps are part of Office 2016, if anything changes in the future
-Office2016Apps=(Excel OneNote Outlook PowerPoint Word)
+Office2016Apps=(Excel OneDrive OneNote Outlook PowerPoint Word)
 
 # Determine working directory
 WORKING_DIR=`dirname $0`
