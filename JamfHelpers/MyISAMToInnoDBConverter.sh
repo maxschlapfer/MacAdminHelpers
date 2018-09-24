@@ -69,7 +69,9 @@ echo "Doing databases backup now..."
 /usr/bin/mysqldump --all-databases --single-transaction --quick --lock-tables=false | gzip -9 > ${BackupDestination}/${timestamp}-backup_all_DBs.gz
 echo "Backup done, continuing."
 
-# set the global parameters
+###
+# Set the global parameters
+###
 # set innodb_buffer_pool_size
 if grep -E "^innodb_buffer_pool_size\s+=\s+" ${MySQLConfigFile};then
    sed -c -i "s/\(innodb_buffer_pool_size *= *\).*/\1$innodb_buffer_pool_size/" $MySQLConfigFile
