@@ -2,7 +2,7 @@
 
 This script helps with the conversion from MyISAM to InnoDB in a setup where a lot of Jamf Pro instances are hosted on one MySQL server.
 
-It is based in the work of MacMule:
+It is based in the work of Ben Toms (macmule):  
 [https://macmule.com/2018/09/23/manually-converting-jamf-pro-tables-from-myisam-to-innodb](https://macmule.com/2018/09/23/manually-converting-jamf-pro-tables-from-myisam-to-innodb)
 
 ### Note
