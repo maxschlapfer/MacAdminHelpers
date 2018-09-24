@@ -8,7 +8,7 @@
 ###
 
 ###
-# If you only have one DB us the tool from Jamf:
+# If you only have one DB, use the tool from Jamf:
 # https://www.jamf.com/jamf-nation/articles/531/converting-the-mysql-database-storage-engine-from-myisam-to-innodb-using-the-jamf-pro-server-tools-command-line-interface
 ###
 # If you host a lot of databases in your environment, this tool might reduce the amount of manual work.
@@ -27,8 +27,8 @@
 # Settings recommendations from Jamf
 #    - innodb_buffer_pool_size:         75% of remaining server memory (server memory minus other services memory)
 #    - innodb_file_per_table:           1
-#    - innodb_flush_log_at_trx_commit   0 - Default is one, 0 or 2 provides better performance with the risk of 
-#                                           loosing 1 sec of transactions in case of power loss/crash of the server
+#    - innodb_flush_log_at_trx_commit   0 - Default is 1, but 0 or 2 provides better performance with the risk of 
+#                                           losing 1 sec of transactions in case of power loss/crash of the server
 #    - key_buffer_size:                 16M
 ###
 # Please check with your DB admin and/or Jamf Support
