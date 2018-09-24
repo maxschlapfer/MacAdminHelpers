@@ -10,6 +10,9 @@ A script to produce all needed override files to package all Adobe CC products u
 ### Disable 802.1x code snippet
 A little code snippet to disable the 802.1x automatic connection.
 
+### Jamf Database Converter Script
+A script to help you convert all tables in your MySQL DB from MyISAM to InnoDB.
+
 ### Mozilla Firefox PackageBuilder Script
 A package build script to download the full installer from Mozilla and bake some AddOns and Language packs and various configurations into the package for deployment inside your organisation.
 
