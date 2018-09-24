@@ -1,4 +1,4 @@
-# Jamf Pro InnoDB Converter Script
+# Jamf Pro Database Converter Script
 
 This script helps with the conversion from MyISAM to InnoDB in a setup where a lot of Jamf Pro instances are hosted on one MySQL server.
 
