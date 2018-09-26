@@ -32,6 +32,7 @@
 # 2017-01-23 - HTTPS for macadmins.software connection
 # 2017-03-04 - Added Input from @eholtam to suppress OneNote initial dialogs
 # 2018-06-19 - Added support for OneDrive
+# 2018-09-26 - Changed search path from O365 to VL2016
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
 
 
@@ -48,7 +49,7 @@ PKG_LANGUAGE="ML"
 MAINURL="https://macadmins.software/versions.xml"
 
 # Get latest version number
-FULL_VERSION=$(curl -s $MAINURL | xmllint --xpath '//latest/o365/text()' -)
+FULL_VERSION=$(curl -s $MAINURL | xmllint --xpath '//latest/vl2016/text()' -)
 
 # Determine working directory
 EXE_DIR=$(dirname "$0")
