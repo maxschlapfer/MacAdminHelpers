@@ -122,4 +122,4 @@ The scripts generates a postinstall script to apply all the desired settings. To
 
 
 ### Known Issues
-- No issues have been identified yet.
+- A "Help us improve" dialog shows after installation. I haven't found a solution to reliable configure this yet.
