@@ -42,7 +42,7 @@ This script was tested under macOS Mojave, v10.14.0.
 3.	make the script executable:
 	`chmod 755 MS_Office_2019_PKGBuilder.sh`
 	
-4.	Make sure to have enough disk space, the scripts needs around 4.5 GB during execution when building the Full Installer package.
+4.	Make sure to have enough disk space, the scripts needs around 5 GB during execution when building the Full Installer package.
 
 5.	Make sure you have a working internet connection, as the script will download the full office installer from the Microsoft server (for version 16.17.0 the size is about 1.8 GB).
 
@@ -51,7 +51,7 @@ This script was tested under macOS Mojave, v10.14.0.
 
 	If you want to exclude some packages you can do with the argument `--exclude` plus a quoted list of Apps or Office parts to exclude (this will generate an InstallerChoices.xml that is used during the Office installation):
 	
-	The following Installer Choices are available (with version 16.14):
+	The following Installer Choices are available (with version 16.17.0):
 	`word` `excel` `powerpoint` `OneDrive` `onenote.mac` `outlook` and `autoupdate`
 
 	**Important: Please do not deactivate the installation of the fonts, frameworks and proofing tools, as you might end up with an unstable and unsupported setup.**
