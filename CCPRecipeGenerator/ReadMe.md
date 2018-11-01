@@ -1,4 +1,6 @@
 # Automating the generation of Adobe CC package override files for AutoPkg
+
+## ATTENTION: With the release of CC 2019 Adobe has deprecated CCP. You won't get anything newer than the CC 2018 releases. To download CC 2019 packages you have to login to your Adobe Console ([http://adminconsole.adobe.com](http://adminconsole.adobe.com)).
   
 This script helps you customize the build process of Adobe CC packages for your organisation.
 It generates an override file for each Adobe product and then builds all packages.
