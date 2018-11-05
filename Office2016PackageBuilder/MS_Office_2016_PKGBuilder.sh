@@ -33,6 +33,7 @@
 # 2017-03-04 - Added Input from @eholtam to suppress OneNote initial dialogs
 # 2018-06-19 - Added support for OneDrive
 # 2018-09-26 - Changed search path from O365 to VL2016
+# 2018-11-05 - Fixed search path for latest version and download link
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
 
 
@@ -46,7 +47,7 @@ PRODUCT="Microsoft_Office_2016"
 PKG_LANGUAGE="ML"
 
 # Define main URL (https://macadmins.software)
-MAINURL="https://macadmins.software/versions.xml"
+MAINURL="https://macadmins.software/latest.xml"
 
 # Get latest version number
 FULL_VERSION=$(curl -s $MAINURL | xmllint --xpath '//latest/vl2016/text()' -)
@@ -76,12 +77,9 @@ do
 done
 
 
-# Use the URL from macadmins.software from the nearest site to your location
-# 	AMERICAS:	https://go.microsoft.com/fwlink/?linkid=525133
-# 	EUROPE:		https://go.microsoft.com/fwlink/?linkid=532572
-# 	ASIA:		https://go.microsoft.com/fwlink/?linkid=532577
-# Default setting is the European distribution server from Microsoft
-FULL_INSTALLER="https://go.microsoft.com/fwlink/?linkid=532572"
+# Only one worldwide installer is available
+# Check macadmins.software from time to time
+FULL_INSTALLER="https://go.microsoft.com/fwlink/?linkid=871743"
 
 # Define output name based on naming convention
 OUTNAME="${PRODUCT}_${FULL_VERSION}_${PKG_LANGUAGE}"
