@@ -24,6 +24,7 @@
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
 # Written and adapted for use at ETH Zurich by Max Schlapfer
 # 2018-09-26 - Changed from VL2016 to VL2019 distribution
+# 2018-11-07 - Fixed search path for latest version and download link
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
 
 
@@ -37,7 +38,7 @@ PRODUCT="Microsoft_Office_2019"
 PKG_LANGUAGE="ML"
 
 # Define main URL (https://macadmins.software)
-MAINURL="https://macadmins.software/versions.xml"
+MAINURL="https://macadmins.software/latest.xml"
 
 # Get latest version number
 FULL_VERSION=$(curl -s $MAINURL | xmllint --xpath '//latest/o365/text()' -)
@@ -67,12 +68,10 @@ do
 done
 
 
-# Use the URL from macadmins.software from the nearest site to your location
-# 	AMERICAS:	https://go.microsoft.com/fwlink/?linkid=525133
-# 	EUROPE:		https://go.microsoft.com/fwlink/?linkid=532572
-# 	ASIA:		https://go.microsoft.com/fwlink/?linkid=532577
-# Default setting is the European distribution server from Microsoft
-FULL_INSTALLER="https://go.microsoft.com/fwlink/?linkid=532572"
+# Only one worldwide installer is available
+# Check macadmins.software from time to time
+FULL_INSTALLER="https://go.microsoft.com/fwlink/?linkid=525133"
+
 
 # Define output name based on naming convention
 OUTNAME="${PRODUCT}_${FULL_VERSION}_${PKG_LANGUAGE}"
