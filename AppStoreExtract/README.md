@@ -4,7 +4,7 @@ Script to extract Installer packages from the Apple AppStore for macOS.
 ### IMPORTANT
 Before you start using this script, please make sure to have the needed licenses covered (for example by site license, Apps&Books or single licenses).
 
-This script was tested under OS X Mavericks 10.9.5, Yosemite 10.10.5, OS X El Capitan 10.11.0, macOS Sierra 10.12.6, macOS High Sierra 10.13.1 and macOS Mojave 10.14.6.
+This script was tested under OS X Mavericks 10.9.5, Yosemite 10.10.5, OS X El Capitan 10.11.0, macOS Sierra 10.12.6, macOS High Sierra 10.13.1 and macOS Mojave 10.14.6. Compatibility with Catalina, see below.
 
 __Attention__:  
 If you extract on High Sierra, please be aware of the fact, that `hdiutil` will build DMGs with APFS as default filesystem. If you need to re-use your dmgs on older plattforms (10.11.x or older), please ad `-fs HFS+` to the hdiutil command.
