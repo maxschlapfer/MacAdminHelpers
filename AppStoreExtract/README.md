@@ -2,13 +2,12 @@
 Script to extract Installer packages from the Apple AppStore for macOS. 
 
 ### IMPORTANT
-Before you start using this script, please make sure to have the needed licenses covered (for example by site license, VPP or single licenses).
+Before you start using this script, please make sure to have the needed licenses covered (for example by site license, Apps&Books or single licenses).
 
-This script was tested under OS X Mavericks 10.9.5, Yosemite 10.10.5, OS X El Capitan 10.11.0, macOS Sierra 10.12.6, and macOS High Sierra 10.13.1.
+This script was tested under OS X Mavericks 10.9.5, Yosemite 10.10.5, OS X El Capitan 10.11.0, macOS Sierra 10.12.6, macOS High Sierra 10.13.1 and macOS Mojave 10.14.6.
 
 __Attention__:  
 If you extract on High Sierra, please be aware of the fact, that `hdiutil` will build DMGs with APFS as default filesystem. If you need to re-use your dmgs on older plattforms (10.11.x or older), please ad `-fs HFS+` to the hdiutil command.
-
 
 ### Information
 Based on an idea from Tim Sutton and Rich Trouton for downloading from the AppStore:
@@ -21,13 +20,6 @@ https://derflounder.wordpress.com/2015/11/19/downloading-installer-packages-from
 ### How to use
 This script needs the temporary download folder from the AppStore App, this is individual by host and is extracted from within the script using "getconf DARWIN_USER_CACHE_DIR".
 
-If you want to activate the AppStore debug mode (not needed for using this script) and check the folder by hand:
-__ATTENTION: This is no longer working with macOS Sierra 10.2 and higher, but is not needed for the script to work.__
-  - Quit the AppStore.app if it is running
-  - open the terminal and enter
-    `defaults write com.apple.appstore ShowDebugMenu -bool true`
-  - Start AppStore.app and browse the Menu "Debug"
-
 If you want to check what folder is used by the AppStore.app, enter this command into your terminal:
 `getconf DARWIN_USER_CACHE_DIR`
 
@@ -35,7 +27,7 @@ If you want to check what folder is used by the AppStore.app, enter this command
 
 - Open terminal and start this script (make it executable first), keep the window open. To make the package naming more munki friendly (using a "-" instead of "_") use the "-m" option to start the script: `AppStoreExtract.sh -m`
 
-- Back in the AppStore.app login in to your account and navigate to your purchases (or buy a new App)
+- Back in the AppStore.app, login in to your account and navigate to your purchases (or buy a new App)
   - Click "Install" for all desired packages
   - wait till every download/installation has finished
 
@@ -43,9 +35,14 @@ If you want to check what folder is used by the AppStore.app, enter this command
 
 - answer the following question with yes (y) to finalize and clean up the downloaded packages
 
+__Compatibility with macOS Catalina__:
+The scripts runs on macOS Catalina, but the finalize step (renaming the package) is not working as Apple has changed the way this information is distributed. Until now, I do not have a solution for this.  
 
-### Known Problems
-If the App ist to small (didn't find an exact size) the extraction might fail sometime, probably when the installation is finished to fast.
+The workaround is: Do not finalize the download and rename the package(s) manually.
+
+
+### other known problems
+If the App ist to small (didn't find an exact size) the extraction might fail sometimes, probably when the installation is finished to fast.
 
 
 ### Alternatives
