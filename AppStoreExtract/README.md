@@ -7,7 +7,13 @@ Before you start using this script, please make sure to have the needed licenses
 This script was tested under OS X Mavericks 10.9.5, Yosemite 10.10.5, OS X El Capitan 10.11.0, macOS Sierra 10.12.6, macOS High Sierra 10.13.1 and macOS Mojave 10.14.6. Compatibility with Catalina, see below.
 
 __Attention__:  
-If you extract on High Sierra, please be aware of the fact, that `hdiutil` will build DMGs with APFS as default filesystem. If you need to re-use your dmgs on older plattforms (10.11.x or older), please ad `-fs HFS+` to the hdiutil command.
+If you extract on High Sierra (or higher), please be aware of the fact, that `hdiutil` will build DMGs with APFS as default filesystem. If you need to re-use your dmgs on older plattforms (10.11.x or older), please ad `-fs HFS+` to the hdiutil command.
+
+__Compatibility with macOS Catalina__:
+The scripts runs on macOS Catalina, but the finalize step (renaming the package) is not working as Apple has changed the way this information is distributed to the client. Until now, I do not have a solution for this, but a work around:
+
+If you do not manually download the App(s) from the AppStore, but using the `mas-cli` [https://github.com/mas-cli/mas](https://github.com/mas-cli/mas) to install the apps on your Mac, my script is still able to pick-up the right version/name.
+
 
 ### Information
 Based on an idea from Tim Sutton and Rich Trouton for downloading from the AppStore:
@@ -34,12 +40,6 @@ If you want to check what folder is used by the AppStore.app, enter this command
 - go back to the terminal and continue the script by pressing any key to stop processing downloads
 
 - answer the following question with yes (y) to finalize and clean up the downloaded packages
-
-__Compatibility with macOS Catalina__:
-The scripts runs on macOS Catalina, but the finalize step (renaming the package) is not working as Apple has changed the way this information is distributed. Until now, I do not have a solution for this.  
-
-The workaround is: Do not finalize the download and rename the package(s) manually.
-
 
 ### other known problems
 If the App ist to small (didn't find an exact size) the extraction might fail sometimes, probably when the installation is finished to fast.
