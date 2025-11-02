@@ -28,7 +28,7 @@ solution and make life easier for a lot of us!
 
 ## Prerequisites:
 - A valid Apple Developer ID to sign packages  
-  - If your account has 2FA activated, make an app sepcific password and use this for the notarisation steps 
+  - If your account has 2FA activated, make an app specific password and use this for the notarisation steps 
     [https://support.apple.com/en-us/HT204397](https://support.apple.com/en-us/HT204397)
   - Generate a Developer ID Installer to sign your package(s) and store in your local keychain
 -	Get the original package from the vendor/reseller etc.  
