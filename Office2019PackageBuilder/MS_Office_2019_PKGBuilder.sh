@@ -80,7 +80,7 @@ PKG_ID="ch.ethz.mac.pkg.${PRODUCT}.${PKG_LANGUAGE}"
 # needed directories 
 # IMPORTANT:
 # The following directory has to exist and must contain
-# your Microsoft_Office_2019_VL_Serializer.pkg
+# your Microsoft_Office_2019_VL_Serializer_Universal.pkg
 # You can get this PKG from Microsoft:
 # https://www.microsoft.com/Licensing/servicecenter/default.aspx
 # Attention: You need a login and a valid contract with Microsoft!
